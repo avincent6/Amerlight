@@ -17,5 +17,6 @@ class Choice(models.Model):
 class Product(models.Model):
     product_name = models.CharField(max_length=250)
     update_date = models.DateTimeField('date updated')
+    product_description = models.CharField(max_length=200)
     def __str__(self):
         return self.product_name

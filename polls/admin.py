@@ -13,8 +13,9 @@ class QuestionAdmin(admin.ModelAdmin):
 
 class ProductAdmin(admin.ModelAdmin):
     fieldsets = [
-        (None, {'fields': ['product_text']}),
+        (None, {'fields': ['product_name']}),
         ('Date information', {'fields': ['update_date']}),
+        ('Product Description', {'fields': ['product_description']}),
     ]
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Choice)
