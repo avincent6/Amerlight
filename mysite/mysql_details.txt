@@ -1,0 +1,1 @@
+Audrey-Vincents-MacBook-Pro:mysite vincent$ mysql.server start
