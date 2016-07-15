@@ -1,0 +1,24 @@
+{% include "head.html" %}
+
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/product.css' %}" />
+
+<div class="nav">
+{% include "nav.html" %}
+</div>
+<h1>{{ product.product_name }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<img src='{{product.image_1}}'><p>{{ product.image_1}}</p>
+
+    <h2>Products</h2>
+    <ul>
+        {% for product in object_list %}
+            <li>{{ product.product_name }}</li>
+            <img src='{{ product.image_1}}'>
+        {% endfor %}
+    </ul>
+
+{% include "scripts.html" %}

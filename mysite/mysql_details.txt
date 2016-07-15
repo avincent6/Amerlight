@@ -1,1 +1,21 @@
 Audrey-Vincents-MacBook-Pro:mysite vincent$ mysql.server start
+
+to stop command$ mysql.server stop
+
+to access the mysql shell
+  command$ mysql -u root -p
+  the password for amerlight_db = dreysifhanks
+  the password for vincent = password
+
+to quit the mysql shell
+  command$ quit;
+
+to use the amerlight_db database
+  command$ show databases
+  command$ use amerlight_db
+
+to see the tables of the database
+  command$ show tables;
+
+to see whats in a table
+  command$ describe '<table_name>' for ex. describe products;
