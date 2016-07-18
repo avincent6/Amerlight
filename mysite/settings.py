@@ -80,14 +80,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'amerlight',
-        'USER': 'vincent',
-        'PASSWORD': 'password',
+        'USER': 'audrey',
+        'PASSWORD': 'P3#southport',
         'HOST': '127.0.0.1', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '', # Set to empty string for default.
        }
     }
 
-
+#923ujqj8h828ahj9uwejr93jr932h8tq284th
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators

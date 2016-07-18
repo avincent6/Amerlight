@@ -36,6 +36,7 @@ class Product(models.Model):
     replacement = models.CharField(max_length=30)
     ul_certified = models.BooleanField(default = False)
     dlc_certified = models.BooleanField(default = False)
+    isIndoor = models.BooleanField(default = False)
     def __str__(self):
         return self.product_name
 

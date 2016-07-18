@@ -19,7 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
         ('Product Specifications', {'fields': ['wattage', 'lumens',
          'lumens_per_watt', 'cct', 'cri', 'dimensions', 'colors', 'life_span',
          'weight', 'warranty']}),
-         ('Product Certification', {'fields': ['ul_certified', 'dlc_certified']}),
+         ('Product Certification', {'fields': ['ul_certified', 'dlc_certified', 'isIndoor']}),
     ]
 
 class CaseStudiesAdmin(admin.ModelAdmin):
