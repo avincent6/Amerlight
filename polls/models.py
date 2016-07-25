@@ -37,6 +37,7 @@ class Product(models.Model):
     ul_certified = models.BooleanField(default = False)
     dlc_certified = models.BooleanField(default = False)
     isIndoor = models.BooleanField(default = False)
+    isFeatured = models.BooleanField(default=False)
     def __str__(self):
         return self.product_name
 
@@ -44,5 +45,9 @@ class CaseStudie(models.Model):
     project_name = models.CharField(max_length=100)
     project_description = models.CharField(max_length=200)
     address = models.CharField(max_length=150)
+    pdf_link = models.CharField(max_length=200)
+    video_link = models.CharField(max_length=150)
+    testimony_quote = models.CharField(max_length=250)
+    
     def __str__(self):
         return self.project_name

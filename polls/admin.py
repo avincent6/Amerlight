@@ -19,7 +19,7 @@ class ProductAdmin(admin.ModelAdmin):
         ('Product Specifications', {'fields': ['wattage', 'lumens',
          'lumens_per_watt', 'cct', 'cri', 'dimensions', 'colors', 'life_span',
          'weight', 'warranty']}),
-         ('Product Certification', {'fields': ['ul_certified', 'dlc_certified', 'isIndoor']}),
+         ('Product Certification', {'fields': ['ul_certified', 'dlc_certified', 'isIndoor', 'isFeatured']}),
     ]
 
 class CaseStudiesAdmin(admin.ModelAdmin):
@@ -27,6 +27,7 @@ class CaseStudiesAdmin(admin.ModelAdmin):
         (None, {'fields': ['project_name']}),
         ('Project Description', {'fields': ['project_description']}),
         ('Project Location Address', {'fields': ['address']}),
+        ('Testimony', {'fields': ['testimony_quote']}),
     ]
 
 admin.site.register(Question, QuestionAdmin)
