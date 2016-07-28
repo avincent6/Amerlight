@@ -53,7 +53,7 @@
            {% for case in all_case_studies %}
 
            <li><a class='item clearfix' id="item"  href="{% url 'polls:case_detail' case.slug %}">
-             {% ifequal case.isFeatured True %}{{ case.project_name }}{% else %}{% endifequal %}pop</a></li>
+             {% ifequal case.isFeatured True %}{{ case.project_name }}{% else %}{% endifequal %}</a></li>
 
            {% endfor %}
          </div>

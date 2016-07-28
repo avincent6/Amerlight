@@ -77,3 +77,12 @@ $(document).ready(function(){
 menu and close animations
 
 http://codepen.io/kyleHenwood/pen/Alayb
+
+mysql
+
+drop database amerlight
+use amerlight
+mysql> SET GLOBAL validate_password_policy=LOW;
+
+
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION
