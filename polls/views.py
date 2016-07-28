@@ -66,9 +66,13 @@ class ProductList(ListView):
 class AboutView(generic.ListView):
     template_name = 'polls/about.html'
     context_object_name = 'about'
-    all_case_studies = CaseStudie.objects.all()
-    all_products = Product.objects.all()
-    queryset = list(chain(all_products, all_case_studies))
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(AboutView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 class ProductDetailView(DetailView):
     context_object_name = 'product'
