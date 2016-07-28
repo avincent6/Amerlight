@@ -61,6 +61,12 @@ class ProductList(ListView):
     model = Product
     template_name = 'polls/product.html'
     context_object_name = 'all_products'
+    def get_context_data(self, **kwargs):
+        context = super(ProductList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 
 class AboutView(generic.ListView):
@@ -92,6 +98,12 @@ class IndoorProductList(ListView):
     context_object_name = 'indoor_product_list'
     queryset = Product.objects.filter(isIndoor='True')
     template_name = 'polls/product.html'
+    def get_context_data(self, **kwargs):
+        context = super(IndoorProductList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 class OutdoorProductList(ListView):
     context_object_name = 'outdoor_product_list'
