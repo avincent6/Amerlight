@@ -62,10 +62,10 @@
    <div class="desktop_menu_about desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
       <div class="container">
          <div class="border-bottom">
-            <h4>The Amerlight Advantage</h4>
-            <li><a class='item clearfix'>Why Amerlight?</a>
+            <a href="{% url 'polls:why_amerlight' %}"><h4>The Amerlight Advantage</h4></a>
+            <li><a href="{% url 'polls:why_led' %}" class='item clearfix'>Why Amerlight?</a>
             </li>
-            <li><a class='item clearfix' id="item"  href="#">Why LED?</a></li>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:why_led' %}">Why LED?</a></li>
             <li><a class='item clearfix' id="item"  href="#">Our Benefits</a></li>
             <li><a class='item clearfix' id="item"  href="#">Sign and Light</a></li>
             <li><a class='item clearfix' id="item"  href="#">Free Estimate</a></li>

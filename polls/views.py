@@ -92,6 +92,28 @@ class ContactView(generic.ListView):
         # And so on for more models
         return context
 
+class WhyAmerlightView(generic.ListView):
+    template_name = 'polls/why_amerlight.html'
+    context_object_name = 'why_amerlight'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(WhyAmerlightView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
+class WhyLedView(generic.ListView):
+    template_name = 'polls/why_led.html'
+    context_object_name = 'why_led'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(WhyLedView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
 class ProductDetailView(DetailView):
     context_object_name = 'product'
     queryset = Product.objects.all()
