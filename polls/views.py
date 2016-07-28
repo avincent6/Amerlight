@@ -109,6 +109,13 @@ class OutdoorProductList(ListView):
     context_object_name = 'outdoor_product_list'
     queryset = Product.objects.filter(isOutdoor='True')
     template_name = 'polls/product.html'
+    def get_context_data(self, **kwargs):
+        context = super(OutdoorProductList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
 
 
 class CaseStudieList(ListView):
