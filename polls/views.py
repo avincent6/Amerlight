@@ -114,6 +114,61 @@ class WhyLedView(generic.ListView):
         # And so on for more models
         return context
 
+class AdvantageView(generic.ListView):
+    template_name = 'polls/advantage.html'
+    context_object_name = 'advantage'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(AdvantageView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
+class SignLightView(generic.ListView):
+    template_name = 'polls/sign_light.html'
+    context_object_name = 'sign_light'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(SignLightView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
+class EstimateView(generic.ListView):
+    template_name = 'polls/estimate.html'
+    context_object_name = 'estimate'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(EstimateView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
+class SalesSearchView(generic.ListView):
+    template_name = 'polls/sales_search.html'
+    context_object_name = 'sales_search'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(SalesSearchView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
+class StartView(generic.ListView):
+    template_name = 'polls/start.html'
+    context_object_name = 'start'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(StartView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
 class ProductDetailView(DetailView):
     context_object_name = 'product'
     queryset = Product.objects.all()

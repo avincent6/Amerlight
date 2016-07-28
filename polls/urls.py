@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import ProductList, IndoorProductList, OutdoorProductList, ProductDetailView, CaseStudieList, CaseStudieDetailView, AutomotiveCaseStudieList, InstitutionalCaseStudieList, InsdustrialCaseStudieList, AboutView, ContactView, WhyAmerlightView, WhyLedView
+from .views import ProductList, IndoorProductList, OutdoorProductList, ProductDetailView, CaseStudieList, CaseStudieDetailView, AutomotiveCaseStudieList, InstitutionalCaseStudieList, InsdustrialCaseStudieList, AboutView, ContactView, WhyAmerlightView, WhyLedView, AdvantageView, SignLightView, EstimateView, SalesSearchView, StartView
 
 from . import views
 
@@ -25,5 +25,10 @@ urlpatterns = [
     url(r'^contact/$', ContactView.as_view(), name='contact'),
     url(r'^why_amerlight/$', WhyAmerlightView.as_view(), name='why_amerlight'),
     url(r'^why_led/$', WhyLedView.as_view(), name='why_led'),
+    url(r'^advantage/$', AdvantageView.as_view(), name='advantage'),
+    url(r'^sign_light/$', SignLightView.as_view(), name='sign_light'),
+    url(r'^estimate/$', EstimateView.as_view(), name='estimate'),
+    url(r'^sales_search/$', SalesSearchView.as_view(), name='sales_search'),
+    url(r'^start/$', StartView.as_view(), name='start'),
 
 ]
