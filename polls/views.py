@@ -122,11 +122,23 @@ class CaseStudieList(ListView):
     context_object_name = 'all_case_studies'
     model = CaseStudie
     template_name = 'polls/case.html'
+    def get_context_data(self, **kwargs):
+        context = super(CaseStudieList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 class CaseStudieDetailView(DetailView):
     context_object_name = 'casestudie'
     queryset = CaseStudie.objects.all()
     template_name = 'polls/case_detail.html'
+    def get_context_data(self, **kwargs):
+        context = super(CaseStudieDetailView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 class AutomotiveCaseStudieList(ListView):
     context_object_name = 'automotive_project_list'
