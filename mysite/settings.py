@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # other apps
+    'compressor',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -126,3 +128,22 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT =  'polls/static/polls'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static/"),
+    '/var/www/static/',
+]
+
+COMPRESS_ENABLED = True;
+
+COMPRESS_PRECOMPILERS = (
+    ('text/scss', 'sass --scss {infile} {outfile}'),
+)
+
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)

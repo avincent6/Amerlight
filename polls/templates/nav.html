@@ -1,71 +1,87 @@
-<script>
-$('document').ready(function () {
-  var trigger = $('#hamburger'),
-      isClosed = true;
 
-  trigger.click(function () {
-    burgerTime();
-  });
 
-  function burgerTime() {
-    if (isClosed == true) {
-      trigger.removeClass('is-open');
-      trigger.addClass('is-closed');
-      isClosed = false;
-    } else {
-      trigger.removeClass('is-closed');
-      trigger.addClass('is-open');
-      isClosed = true;
-    }
-  }
+<div class='banner'>
+   <a class="brand" href="this_page_link"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'></a>
+   <i class="fa fa-bars clearfix" aria-hidden="true"></i>
+   <div class='nav'>
+      <li><a class='item clearfix'  href="{% url 'polls:products' %}" id="item" onmouseenter="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'none'">
+         PRODUCTS</a>
+      </li>
+      <li><a class='item clearfix' href="#" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
+         CASE STUDIES</a>
+      </li>
+      <li><a class='item clearfix' href="#" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
+         ABOUT US</a>
+      </li>
+      <li><a class='item clearfix' href="#" onmouseenter="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'none'">
+         CONTACT US</a>
+      </li>
+   </div>
+   <div class="desktop_menu_products desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'none'">
+      <div class="container">
+         <div class="border-bottom">
+            <h4>Products</h4>
+            <li><a class='item clearfix' href="{% url 'polls:indoor_products' %}">Indoor</a>
+            </li>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:outdoor_products' %}">Outdoor</a></li>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:products' %}">All Products</a></li>
+         </div>
+         <div class="feat">
+            <p>Featured Products {{ featured_products }}</p>
+            {% for each_product in all_products %}
 
-});
- </script>
-    <div id="sidebar">
-      <div class='banner'>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:product_detail' each_product.slug %}">
+              {% ifequal each_product.isFeatured True %}{{ each_product.product_name }}{% else %}{% endifequal %}</a></li>
 
-  		<a class="brand" href="this_page_link"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'</a>
+            {% endfor %}
 
-  		<div class='nav'>
-
-  				<li><a class='item1' href="#">PRODUCTS</a></li>
-  				<li><a class='item2' href="#">CASE STUDIES</a></li>
-  				<li><a class='item3' href="#">ABOUT US</a></li>
-  				<li><a class='item4' href="#">CONTACT US</a></li>
-  				<!--
-article: https://raygun.io/blog/2014/07/making-svg-html-burger-button/
--->
-
-<div id="hamburger" class="hamburglar is-open">
-
-    <div class="burger-icon">
-      <div class="burger-container">
-        <span class="burger-bun-top"></span>
-        <span class="burger-filling"></span>
-        <span class="burger-bun-bot"></span>
+         </div>
       </div>
-    </div>
+   </div>
+   <div class="desktop_menu_case desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
+      <div class="container">
+         <div class="border-bottom">
+            <h4>Amerlight Projects</h4>
+            <li><a class='item clearfix' href="{% url 'polls:industrial_projects' %}">Industrial</a>
+            </li>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:automotive_projects' %}">Automotive</a></li>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:institutional_projects' %}">Institutional</a></li>
+            <li><a class='item clearfix' id="item"  href="{% url 'polls:case_studies' %}">All Projects</a></li>
+         </div>
+         <div class="feat">
+           <p>Featured Projects {{ featured_products }}</p>
+           {% for case in all_case_studies %}
 
-    <!-- svg ring containter -->
-    <div class="burger-ring">
-      <svg class="svg-ring">
-	      <path class="path" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="4" d="M 34 2 C 16.3 2 2 16.3 2 34 s 14.3 32 32 32 s 32 -14.3 32 -32 S 51.7 2 34 2" />
-      </svg>
-    </div>
-    <!-- the masked path that animates the fill to the ring -->
+           <li><a class='item clearfix' id="item"  href="{% url 'polls:case_detail' case.slug %}">
+             {% ifequal case.isFeatured True %}{{ case.project_name }}{% else %}{% endifequal %}pop</a></li>
 
- 		<svg width="0" height="0">
-       <mask id="mask">
-    <path xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-miterlimit="10" stroke-width="4" d="M 34 2 c 11.6 0 21.8 6.2 27.4 15.5 c 2.9 4.8 5 16.5 -9.4 16.5 h -4" />
-       </mask>
-     </svg>
-    <div class="path-burger">
-      <div class="animate-path">
-        <div class="path-rotation"></div>
+           {% endfor %}
+         </div>
       </div>
-    </div>
-
-  </div>
-  		</div>
-  	</div>
-  </div>
+   </div>
+   <div class="desktop_menu_about desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
+      <div class="container">
+         <div class="border-bottom">
+            <h4>The Amerlight Advantage</h4>
+            <li><a class='item clearfix'>Why Amerlight?</a>
+            </li>
+            <li><a class='item clearfix' id="item"  href="#">Why LED?</a></li>
+            <li><a class='item clearfix' id="item"  href="#">Our Benefits</a></li>
+            <li><a class='item clearfix' id="item"  href="#">Sign and Light</a></li>
+            <li><a class='item clearfix' id="item"  href="#">Free Estimate</a></li>
+         </div>
+      </div>
+   </div>
+   <div class="desktop_menu_contact desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'none'">
+      <div class="container">
+         <div class="border-bottom">
+            <h4>Contact Us</h4>
+            <li><a class='item clearfix'>Find a Sales Representative near you.</a>
+            </li>
+            <li><a class='item clearfix' id="item"  href="#">Start Your Project</a></li>
+            <li><a class='item clearfix' id="item"  href="#">Sign and Light</a></li>
+            <li><a class='item clearfix' id="item"  href="#">Free Estimate</a></li>
+         </div>
+      </div>
+   </div>
+</div>

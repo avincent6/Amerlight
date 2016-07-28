@@ -28,7 +28,7 @@
 
           <ul>
 
-        {% for product in object_list %}<div class="product_box">
+        {% for product in result_list %}<div class="product_box">
             <a href="{% url 'polls:product_detail' product.slug %}"><li class="product_li">{{ product.product_name }}</li>
             <img class='product_image' src='{{ product.image_1 }}'></a>
         </div>{% endfor %}

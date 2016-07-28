@@ -1,0 +1,140 @@
+@import 'vars.scss';
+@import 'nav';
+@import 'footer';
+@import 'nav_animation';
+
+body {
+  background: $white;
+  font-size: $p;
+  font-family: $font;
+  position: relative;
+}
+h1 {
+  font-size: $h1;
+  font-family: $font;
+
+}
+h2 {
+  font-size: $h2;
+  font-family: $font;
+}
+h3 {
+  font-size: $h3;
+  font-family: $font;
+}
+h4 {
+  font-size: $h4;
+  font-family: $font;
+}
+p {
+  font-size: $p;
+  font-family: $font;
+}
+.subtext {
+  font-size: $subtext;
+  font-family: $font;
+}
+.background {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.dark {
+  color: $dark;
+}
+.white {
+  color: $white;
+}
+
+.containter {
+
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 0px;
+  color: $dark;
+  &:hover {
+    color: $darkLight;
+  }
+  &:active {
+    color: $dark;
+  }
+}
+
+.btn_solid_l {
+  border: 2px solid $white;
+  background: $white;
+  color: $dark;
+  &:hover {
+    border: 2px solid $darkLight;
+    background: $darkLight;
+    color: $white;
+  }
+  &:active {
+    border: 2px solid $dark;
+    background: $dark;
+    color: $white;
+  }
+}
+.btn_solid_d {
+  border: 2px solid $dark;
+  background: $dark;
+  color: $white;
+  &:hover {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+  }
+  &:active {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+  }
+}
+
+.btn_translucent_l {
+  border: 2px solid $white;
+  background: none;
+  color: $white;
+  &:hover {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+  }
+  &:active {
+    border: 2px solid $dark;
+    background: $dark;
+    color: $white;
+  }
+}
+.btn_translucent_d {
+  border: 2px solid $dark;
+  background: none;
+  color: $dark;
+  &:hover {
+    border: 2px solid $darkLight;
+    background: $darkLight;
+    color: $white;
+  }
+  &:active {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+
+  }
+}

@@ -1,0 +1,38 @@
+{% include "scripts.html" %}
+{% include "head.html" %}
+
+{% load compress %}
+{% load staticfiles %}
+
+{% compress css %}
+  <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+  <link rel="stylesheet" type="text/scss" href="{% static 'product_d.scss' %}" />
+{% endcompress %}
+
+<div class="nav_wrap">
+{% include "nav.html" %}
+</div>
+<h1>hey</h1>
+<div>
+  <h2>{{ casestudie.project_name }}</h2>
+  <img class='case_image' src='{{ casestudie.image_1 }}'>
+  <div class="">
+    <p>poop</p>
+    <p>{{ casestudie.project_description }}</p>
+    <p>{{ casestudie.address }}</p>
+    <p>{{ casestudie.address_link }}</p>
+    <p>{{ casestudie.pdf_link }}</p>
+    <p>{{ casestudie.video_link }}</p>
+    <p>{{ casestudie.testimony_quote }}</p>
+    <p>{{ casestudie.image_1 }}</p>
+    <p>{{ casestudie.image_2 }}</p>
+    <p>{{ casestudie.image_3 }}</p>
+    <p>{{ casestudie.image_4 }}</p>
+    <p>{{ casestudie.image_5 }}</p>
+    <p>{{ casestudie.isIndustrial }}</p>
+    <p>{{ casestudie.isAutomotive }}</p>
+    <p>{{ casestudie.isInstitutional }}</p>
+  </div>
+</div>
+
+{% include "footer.html" %}
