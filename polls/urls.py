@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import ProductList, IndoorProductList, OutdoorProductList, ProductDetailView, CaseStudieList, CaseStudieDetailView, AutomotiveCaseStudieList, InstitutionalCaseStudieList, InsdustrialCaseStudieList, AboutView
+from .views import ProductList, IndoorProductList, OutdoorProductList, ProductDetailView, CaseStudieList, CaseStudieDetailView, AutomotiveCaseStudieList, InstitutionalCaseStudieList, InsdustrialCaseStudieList, AboutView, ContactView
 
 from . import views
 
@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^case_studies/(?P<slug>[\w-]+)/$', CaseStudieDetailView.as_view(), name='case_detail'),
 
     url(r'^about/$', AboutView.as_view(), name='about'),
+    url(r'^contact/$', ContactView.as_view(), name='contact'),
 
 ]

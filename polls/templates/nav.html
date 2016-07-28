@@ -1,26 +1,26 @@
 
 
 <div class='banner'>
-   <a class="brand" href="this_page_link"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'></a>
+   <a class="brand" href="{% url 'polls:index'%}"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'></a>
    <i class="fa fa-bars clearfix" aria-hidden="true"></i>
    <div class='nav'>
       <li><a class='item clearfix'  href="{% url 'polls:products' %}" id="item" onmouseenter="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'none'">
          PRODUCTS</a>
       </li>
-      <li><a class='item clearfix' href="#" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
+      <li><a class='item clearfix' href="{% url 'polls:case_studies' %}" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
          CASE STUDIES</a>
       </li>
-      <li><a class='item clearfix' href="#" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
+      <li><a class='item clearfix' href="{% url 'polls:about'%}" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
          ABOUT US</a>
       </li>
-      <li><a class='item clearfix' href="#" onmouseenter="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'none'">
+      <li><a class='item clearfix' href="{% url 'polls:contact'%}" onmouseenter="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'none'">
          CONTACT US</a>
       </li>
    </div>
    <div class="desktop_menu_products desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'none'">
       <div class="container">
          <div class="border-bottom">
-            <h4>Products</h4>
+            <a href="{% url 'polls:products' %}"><h4>Products</h4></a>
             <li><a class='item clearfix' href="{% url 'polls:indoor_products' %}">Indoor</a>
             </li>
             <li><a class='item clearfix' id="item"  href="{% url 'polls:outdoor_products' %}">Outdoor</a></li>
@@ -41,7 +41,7 @@
    <div class="desktop_menu_case desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
       <div class="container">
          <div class="border-bottom">
-            <h4>Amerlight Projects</h4>
+            <a href="{% url 'polls:case_studies' %}"><h4>Amerlight Projects</h4></a>
             <li><a class='item clearfix' href="{% url 'polls:industrial_projects' %}">Industrial</a>
             </li>
             <li><a class='item clearfix' id="item"  href="{% url 'polls:automotive_projects' %}">Automotive</a></li>

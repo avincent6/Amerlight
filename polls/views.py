@@ -80,6 +80,18 @@ class AboutView(generic.ListView):
         # And so on for more models
         return context
 
+
+class ContactView(generic.ListView):
+    template_name = 'polls/contact.html'
+    context_object_name = 'contact'
+    queryset = Product.objects.all()
+    def get_context_data(self, **kwargs):
+        context = super(ContactView, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
 class ProductDetailView(DetailView):
     context_object_name = 'product'
     queryset = Product.objects.all()
@@ -144,13 +156,31 @@ class AutomotiveCaseStudieList(ListView):
     context_object_name = 'automotive_project_list'
     queryset = CaseStudie.objects.filter(isAutomotive='True')
     template_name = 'polls/case.html'
+    def get_context_data(self, **kwargs):
+        context = super(AutomotiveCaseStudieList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 class InstitutionalCaseStudieList(ListView):
     context_object_name = 'institutional_project_list'
     queryset = CaseStudie.objects.filter(isInstitutional='True')
     template_name = 'polls/case.html'
+    def get_context_data(self, **kwargs):
+        context = super(InstitutionalCaseStudieList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
 
 class InsdustrialCaseStudieList(ListView):
     context_object_name = 'industrial_project_list'
     queryset = CaseStudie.objects.filter(isIndustrial='True')
     template_name = 'polls/case.html'
+    def get_context_data(self, **kwargs):
+        context = super(InsdustrialCaseStudieList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
