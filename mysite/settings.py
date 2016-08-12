@@ -79,15 +79,27 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'amerlight',
-        'USER': 'vincent',
+<<<<<<< HEAD
+<<<<<<< HEAD
+        'NAME': 'led',
+        'USER': 'sharon',
         'PASSWORD': 'password',
+=======
+        'NAME': 'amerlight',
+        'USER': 'jim',
+        'PASSWORD': 'P3#southport',
+>>>>>>> origin/master
+=======
+        'NAME': 'amerlight',
+        'USER': 'jim',
+        'PASSWORD': 'P3#southport',
+>>>>>>> origin/master
         'HOST': '127.0.0.1', # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
         'PORT': '', # Set to empty string for default.
        }
     }
 
-
+#923ujqj8h828ahj9uwejr93jr932h8tq284th
 
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators

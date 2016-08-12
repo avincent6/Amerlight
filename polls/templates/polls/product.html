@@ -1,12 +1,14 @@
+{% include "scripts.html" %}
 {% include "head.html" %}
 
 {% load staticfiles %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/product.css' %}" />
 
-<div class="nav">
+<div class="nav_wrap">
 {% include "nav.html" %}
 </div>
+<div class='products'>
 <h1>{{ product.product_name }}</h1>
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
@@ -14,11 +16,18 @@
 <img src='{{product.image_1}}'><p>{{ product.image_1}}</p>
 
     <h2>Products</h2>
-    <ul>
-        {% for product in object_list %}
-            <li>{{ product.product_name }}</li>
-            <img src='{{ product.image_1}}'>
-        {% endfor %}
-    </ul>
+    <div class='product_box2'>
 
-{% include "scripts.html" %}
+          <ul>
+
+        {% for product in object_list %}<div class="product_box">
+
+            <li class="product_li">{{ product.product_name }}</li>
+            <img class='product_image' src='{{ product.image_1}}'>
+        </div>{% endfor %}
+
+    </ul>
+  </div>
+</div>
+
+{% include "footer.html" %}

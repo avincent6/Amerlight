@@ -1,0 +1,79 @@
+For Pictures on the web
+
+https://drive.google.com/uc?export=view&id={fileId}
+
+- get field id at the end of the shared link in google drive
+
+src="https://drive.google.com/uc?export=view&id={fileId}"
+
+######################
+
+MAP html element
+address:
+http://embedgooglemaps.com/en/
+
+<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script><div style='overflow:hidden;height:200px;width:200px;'><div id='gmap_canvas' style='height:200px;width:200px;'></div><div><small><a href="http://embedgooglemaps.com">									embed google maps							</a></small></div><div><small><a href="https://termsandcondiitionssample.com">terms and conditions generator</a></small></div><style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div><script type='text/javascript'>function init_map(){var myOptions = {zoom:11,center:new google.maps.LatLng(37.9715592,-87.57108979999998),mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(37.9715592,-87.57108979999998)});infowindow = new google.maps.InfoWindow({content:'<strong>Amerlight</strong><br>Evansville, IN<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
+
+#######################################
+
+Slick
+##################
+html:
+
+
+header:
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<!-- Add the slick-theme.css if you want default styling -->
+<!-- <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick-theme.css"/>-->
+
+body:
+
+<div class="your-class">
+<div><img id='cimg' src='https://drive.google.com/uc?export=view&id=0Bxgx2Luaj5zvdEVncFk3dXU3Q1k'></div>
+<div><img id='cimg' src='https://drive.google.com/uc?export=view&id=0Bxgx2Luaj5zvZ3pYeFdlV2FoNWc'></div>
+<div><img id='cimg' src'https://drive.google.com/uc?export=view&id=0Bxgx2Luaj5zvZ3pYeFdlV2FoNWc'></div>
+<div><img id='cimg' src='https://drive.google.com/uc?export=view&id=0Bxgx2Luaj5zvRkdxZWZHcEJaWjQ'></div>
+<div><img id='cimg' src='https://drive.google.com/uc?export=view&id=0Bxgx2Luaj5zvRkdxZWZHcEJaWjQ'></div>
+</div>
+<div id='image'>
+<img class='lol' src="evansville.svg">
+</div>
+
+bottom of body:
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+#######################
+css:
+
+########################
+js:
+
+
+$(document).ready(function(){
+  $('.your-class').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    fade: true,
+    asNavFor: '#cimg'
+  });
+  $('#cimg').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    asNavFor: '#cimg',
+    arrows: false,
+    dots: true,
+    centerMode: true,
+    focusOnSelect: true
+  });
+
+  });
+#########################
+
+menu and close animations
+
+http://codepen.io/kyleHenwood/pen/Alayb
