@@ -6,6 +6,8 @@ https://drive.google.com/uc?export=view&id={fileId}
 
 src="https://drive.google.com/uc?export=view&id={fileId}"
 
+-- to download on click
+https://drive.google.com/uc?export=download&id=FILE_ID
 ######################
 
 MAP html element
@@ -79,10 +81,71 @@ menu and close animations
 http://codepen.io/kyleHenwood/pen/Alayb
 
 mysql
+mysql -u root -p
+password
 
 drop database amerlight
+mysql> CREATE DATABASE menagerie;
+
+DROP USER 'jeffrey'@'localhost';
 use amerlight
+# see all users
+SELECT User FROM mysql.user;
+
+#create user
+CREATE USER 'jeffrey'@'localhost' IDENTIFIED BY 'mypass';
+
+mysql> use
+
 mysql> SET GLOBAL validate_password_policy=LOW;
 
 
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' WITH GRANT OPTION
+
+quit
+
+then run
+python3 manage.py migrate (make sure to delete all migrations in folder migrations under polls - keep the __init__.pyfile and the __pycache__ folder only )
+that will create a 0001 migrations
+$run python3 manage.py sqlmigrate polls 0001
+next $python3 manage.py migrate
+
+$python3 manage.py makemigrations
+$python3 manage.py migrate
+
+your default domain will be example.com in your database under the table django_site
+update django_site set domain='127.0.0.1:8000';
+
+show tables;
+describe <table name>;
+
+alter table <table-name>
+drop column <column-name> OR add column <column-name>
+
+#get size of database
+mysql> SELECT table_schema 'amerlight',
+    -> sum( data_length + index_length ) / 1024 / 1024 "Data Base Size in MB",
+    ->     sum( data_free )/ 1024 / 1024 "Free Space in MB"
+    -> FROM information_schema.TABLES
+    -> GROUP BY table_schema ;
+
+# cross site scripting
+
+{% csrf_token %}
+
+clouddb
+
+venv
+
+procfile
+
+gunicorn
+
+pip install --user [package]
+
+
+todos
+- css with footer form
+- free consultation
+- all sales members
+- mobile menu

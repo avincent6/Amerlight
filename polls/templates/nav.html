@@ -1,86 +1,87 @@
-
-
-<div class='banner'>
-   <a class="brand" href="{% url 'polls:index'%}"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'></a>
-   <i class="fa fa-bars clearfix" aria-hidden="true"></i>
-   <div class='nav'>
-      <li><a class='item clearfix'  href="{% url 'polls:products' %}" id="item" onmouseenter="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'none'">
+{% include "head.html" %}
+<script type="text/javascript" src='/static/polls/javascript/base.js'></script>
+<div class='nav-container'>
+    <a class="brand" href="{% url 'polls:index'%}"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'></a>
+    <i class="fa fa-bars bars" aria-hidden="true"></i>
+    <div class='nav'>
+        <li class="nav-product"><a class='nav-product-a item clearfix' href="{% url 'polls:products' %}" id="item">
          PRODUCTS</a>
-      </li>
-      <li><a class='item clearfix' href="{% url 'polls:case_studies' %}" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
+        </li>
+        <li class='nav-case'><a class='nav-case-a item clearfix' href="{% url 'polls:case_studies' %}">
          CASE STUDIES</a>
-      </li>
-      <li><a class='item clearfix' href="{% url 'polls:about'%}" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
+        </li>
+        <li class='nav-about'><a class='nav-about-a item clearfix' href="{% url 'polls:about'%}">
          ABOUT US</a>
-      </li>
-      <li><a class='item clearfix' href="{% url 'polls:contact'%}" onmouseenter="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'none'">
+        </li>
+        <li class='nav-contact'><a class='nav-contact-a item clearfix' href="{% url 'polls:contact'%}">
          CONTACT US</a>
-      </li>
-   </div>
-   <div class="desktop_menu_products desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_products')[0].style.display = 'none'">
-      <div class="container">
-         <div class="border-bottom">
-            <a href="{% url 'polls:products' %}"><h4>Products</h4></a>
-            <li><a class='item clearfix' href="{% url 'polls:indoor_products' %}">Indoor</a>
-            </li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:outdoor_products' %}">Outdoor</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:products' %}">All Products</a></li>
-         </div>
-         <div class="feat">
-            <p>Featured Products {{ featured_products }}</p>
-            {% for each_product in all_products %}
+        </li>
+    </div>
+    <div class="desktop_menu_products desktop_menu" id="desktop_menu">
+        <div class="container">
+            <div class="border-bottom">
+                <a href="{% url 'polls:products' %}"><h4>Products</h4></a>
+                <li><a class='item clearfix' href="{% url 'polls:indoor_products' %}">Indoor</a>
+                </li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:outdoor_products' %}">Outdoor</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:products' %}">All Products</a></li>
+            </div>
+            <div class="feat">
+                <p>Featured Products {{ featured_products }}</p>
+                {% for each_product in all_products %}
 
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:product_detail' each_product.slug %}">
+                <li><a class='item clearfix' id="item" href="{% url 'polls:product_detail' each_product.slug %}">
               {% ifequal each_product.isFeatured True %}{{ each_product.product_name }}{% else %}{% endifequal %}</a></li>
 
-            {% endfor %}
+                {% endfor %}
 
-         </div>
-      </div>
-   </div>
-   <div class="desktop_menu_case desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_case')[0].style.display = 'none'">
-      <div class="container">
-         <div class="border-bottom">
-            <a href="{% url 'polls:case_studies' %}"><h4>Amerlight Projects</h4></a>
-            <li><a class='item clearfix' href="{% url 'polls:industrial_projects' %}">Industrial</a>
-            </li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:automotive_projects' %}">Automotive</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:institutional_projects' %}">Institutional</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:case_studies' %}">All Projects</a></li>
-         </div>
-         <div class="feat">
-           <p>Featured Projects {{ featured_products }}</p>
-           {% for case in all_case_studies %}
+            </div>
+        </div>
+    </div>
+    <div class="desktop_menu_case desktop_menu" id="desktop_menu">
+        <div class="container">
+            <div class="border-bottom">
+                <a href="{% url 'polls:case_studies' %}"><h4>Amerlight Projects</h4></a>
+                <li><a class='item clearfix' href="{% url 'polls:industrial_projects' %}">Industrial</a>
+                </li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:automotive_projects' %}">Automotive</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:institutional_projects' %}">Institutional</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:case_studies' %}">All Projects</a></li>
+            </div>
+            <div class="feat">
+                <p>Featured Projects {{ featured_products }}</p>
+                {% for case in all_case_studies %}
 
-           <li><a class='item clearfix' id="item"  href="{% url 'polls:case_detail' case.slug %}">
+                <li><a class='item clearfix' id="item" href="{% url 'polls:case_detail' case.slug %}">
              {% ifequal case.isFeatured True %}{{ case.project_name }}{% else %}{% endifequal %}</a></li>
 
-           {% endfor %}
-         </div>
-      </div>
-   </div>
-   <div class="desktop_menu_about desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_about')[0].style.display = 'none'">
-      <div class="container">
-         <div class="border-bottom">
-            <a href="{% url 'polls:advantage' %}"><h4>The Amerlight Advantage</h4></a>
-            <li><a href="{% url 'polls:why_amerlight' %}" class='item clearfix'>Why Amerlight?</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:why_led' %}">Why LED?</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:advantage' %}">Our Benefits</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:sign_light' %}">Sign and Light</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:estimate' %}">Free Estimate</a></li>
-         </div>
-      </div>
-   </div>
-   <div class="desktop_menu_contact desktop_menu" id="desktop_menu" onmouseenter="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'block'"  onmouseleave="document.getElementsByClassName('desktop_menu_contact')[0].style.display = 'none'">
-      <div class="container">
-         <div class="border-bottom">
-            <a class='item clearfix' href="{% url 'polls:contact' %}"><h4>Contact Us</h4>
-            <li><a class='item clearfix' href="{% url 'polls:sales_search' %}">Find a Sales Representative near you.</a>
-            </li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:start' %}">Start Your Project</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:sign_light' %}">Sign and Light</a></li>
-            <li><a class='item clearfix' id="item"  href="{% url 'polls:estimate' %}">Free Estimate</a></li>
-         </div>
-      </div>
-   </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="desktop_menu_about desktop_menu" id="desktop_menu">
+        <div class="container">
+            <div class="border-bottom">
+                <a href="{% url 'polls:advantage' %}"><h4>The Amerlight Advantage</h4></a>
+                <li><a href="{% url 'polls:why_amerlight' %}" class='item clearfix'>Why Amerlight?</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:why_led' %}">Why LED?</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:advantage' %}">Our Benefits</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:sign_light' %}">Sign and Light</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:estimate' %}">Free Estimate</a></li>
+            </div>
+        </div>
+    </div>
+    <div class="desktop_menu_contact desktop_menu" id="desktop_menu">
+        <div class="container">
+            <div class="border-bottom">
+                <a class='item clearfix' href="{% url 'polls:contact' %}"><h4>Contact Us</h4></a>
+                <li><a class='item clearfix' href="{% url 'polls:contact' %}">Find a Sales Representative near you.</a>
+                </li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:start' %}">Start Your Project</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:sign_light' %}">Sign and Light</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:estimate' %}">Free Estimate</a></li>
+                <li><a class='item clearfix' id="item" href="{% url 'polls:faq' %}">FAQ</a></li>
+            </div>
+        </div>
+    </div>
 </div>

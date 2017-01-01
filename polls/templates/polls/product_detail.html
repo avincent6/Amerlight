@@ -1,38 +1,283 @@
-{% include "scripts.html" %}
-{% include "head.html" %}
-
-{% load compress %}
-{% load staticfiles %}
-
-{% compress css %}
-  <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
-  <link rel="stylesheet" type="text/scss" href="{% static 'product_d.scss' %}" />
-{% endcompress %}
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'product_d.scss' %}" /> {% endcompress %}
 
 <div class="nav_wrap">
-{% include "nav.html" %}
+    {% include "nav.html" %}
+</div>
+<div class='p-section black'>
+    <h2>{{ product.product_name }}</h2>
+    <div class='section-left'>
+        <div class='product-headline'>
+            <p class='subhead'>LED Pole Light
+                <p>
+                    <p class='head'>{{ product.product_name }}</p>
+                    <p>{{ product.product_description }}</p>
+                    {% ifequal product.isIndoor True %}
+                    <p class='subhead'><i class="fa fa-building" aria-hidden="true"></i>&nbsp;&nbsp;Indoor</p>
+                    {% else %} {% endifequal %} {% ifequal product.isOutdoor True %}
+                    <p class='subhead'><i class="fa fa-tree" aria-hidden="true"></i>&nbsp;&nbsp;Outdoor</p>
+                    {% else %} {% endifequal %}
+
+        </div>
+    </div>
+    <div class="section-right pic-slider">
+        <div class="slider-for">
+            <div data-index="1">
+                <img src="{{ product.image_1 }}" alt="One">
+            </div>
+            <div data-index="2">
+                <img src="{{ product.image_2 }}" alt="One">
+            </div>
+            <div data-index="3">
+                <img src="{{ product.image_3 }}" alt="One">
+            </div>
+            <div data-index="4">
+                <img src="{{ product.image_4 }}" alt="One">
+            </div>
+            <div data-index="5">
+                <img src="{{ product.image_5 }}" alt="One">
+            </div>
+        </div>
+
+        <!-- THUMBNAILS -->
+        <div class="slider-nav">
+            <div><img src="{{ product.image_1 }}" slide="slide_1">
+            </div>
+            <div><img src="{{ product.image_2 }}" slide="slide_2">
+            </div>
+            <div><img src="{{ product.image_3 }}" slide="slide_3">
+            </div>
+            <div><img src="{{ product.image_4 }}" slide="slide_4">
+            </div>
+            <div><img src="{{ product.image_5 }}" slide="slide_5">
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+    <hr>
+    <div class='p-section info-product f-title-container'>
+        <div class='float-title'>{{ product.product_name }} Specifications<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+
+        <div class='section-left specs'>
+            <p class='head spec'>{{ product.product_name }}</p>
+            <p class='subhead subhead-spec '>Wattage</p>
+            <p class='new-line'>{{ product.wattage }}</p>
+            <p class='subhead subhead-spec'>Lumens</p>
+            <p class='new-line'>{{ product.lumens }}</p>
+            <p class='subhead subhead-spec'>Lumens per Watt</p>
+            <p class='new-line'>{{ product.lumens_per_watt }}</p>
+            <p class='subhead subhead-spec'>CCT</p>
+            <p class='new-line'>{{ product.cct }}</p>
+            <p class='subhead subhead-spec'>CRI</p>
+            <p class='new-line'>{{ product.cri }}</p>
+            <p class='subhead subhead-spec'>Colors</p>
+            <p class='new-line'>{{ product.colors }}</p>
+            <p class='subhead subhead-spec'>Life Span</p>
+            <p class='new-line'>{{ product.life_span }}</p>
+            <p class='subhead subhead-spec'>Weight</p>
+            <p class='new-line'>{{ product.weight }}</p>
+            <p class='subhead subhead-spec'>Warranty</p>
+            <p class='new-line'>{{ product.warranty }}</p>
+
+        </div>
+
+        <div class='section-right '>
+            <p class='subhead'><i class="fa fa-lightbulb-o fa-gray" aria-hidden="true">&nbsp;&nbsp;</i>{{ product.replacement }}</p>
+
+            <p class='subhead'><i class="fa fa-certificate fa-gray" aria-hidden="true"></i>&nbsp;&nbsp;Certification:&nbsp;&nbsp;{% ifequal product.ul_certified True %}
+                <span>UL,</span> {% else %} {% endifequal %} {% ifequal product.dlc_certified True %}
+                <span>DLC</span> {% else %} {% endifequal %}
+            </p>
+            <p>
+                {% ifequal product.ul_certified True %}
+                <img class='logo-small' src='/static/polls/images/dlc_logo.png'> {% else %} {% endifequal %} {% ifequal product.dlc_certified True %}
+                <img class='logo-small' src='/static/polls/images/ul_logo.gif'> {% else %} {% endifequal %}
+                <!--{{ product.dlc_certified }}-->
+                <!--{{ product.dlc_certified }}-->
+            </p>
+            <br>
+            <a class='btn-solid-d download' href="{{ product.pdf_link }}" alt='download pdf'>
+                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+                <p>Download PDF</p>
+            </a>
+            <br>
+            <br>
+            <br>
+            <a class='btn-solid-d download' href="{{ product.ies_zip }}" alt='download ies'> <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+                <p>Download IES</p>
+            </a>
+            </a>
+        </div>
+    </div>
 </div>
 
 <div>
-  <h2>{{ product.product_name }}</h2>
-  <img class='product_image' src='{{ product.image_1 }}'>
-  <div class="info_table">
-    <p>{{ product.product_description }}</p>
-    <p>{{ product.wattage }}</p>
-    <p>{{ product.lumens }}</p>
-    <p>{{ product.lumens_per_watt }}</p>
-    <p>{{ product.cct }}</p>
-    <p>{{ product.cri }}</p>
-    <p>{{ product.colors }}</p>
-    <p>{{ product.life_span }}</p>
-    <p>{{ product.weight }}</p>
-    <p>{{ product.warranty }}</p>
-    <p>{{ product.replacement }}</p>
-    <p>{{ product.ul_certified }}</p>
-    <p>{{ product.dlc_certified }}</p>
-    <p>{{ product.isIndoor }}</p>
-    <p>{{ product.isFeatured }}</p>
-  </div>
+    <hr>
+    <div class='p-section black f-title-container clearfix'>
+        <div class='float-title'>{{ product.product_name }} Documentation<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+
+        <div class='section-left specs'>
+            <p class='head spec'>{{ product.product_name }} Documentation</p>
+
+            <a class='simple-a'>
+                <p class='subhead subhead-spec'><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+                <p class='new-line'>All spec files&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+            </a>
+            <ul class='ies-list clearfix'>
+                <li class='ies-list'><a class='simple-a' href="{{ product.pdf_link }}"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ product.product_name }} Specification PDF</a></li>
+
+            </ul>
+
+            <a class='simple-a'>
+                <p class='subhead subhead-spec'><i class="fa fa-file-o" aria-hidden="true"></i></p>
+                <p class='new-line'>All IES files&nbsp;&nbsp;&nbsp;<i class="fa fa-chevron-down" aria-hidden="true"></i></p>
+            </a>
+            <ul class='ies-list clearfix'>
+                <li class='ies-list'><a class='simple-a' href="{{ product.ies_link_1 }}"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ product.ies_name_1 }}</a></li>
+                <li class='ies-list'><a class='simple-a' href="{{ product.ies_link_2 }}"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ product.ies_name_2 }}</a></li>
+                <li class='ies-list'><a class='simple-a' href="{{ product.ies_link_3 }}"><i class="fa fa-file-o" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;{{ product.ies_name_3 }}</a></li>
+            </ul>
+
+            <a class='simple-a' href="#">
+                <p class='subhead subhead-spec'><i class="fa fa-wrench" aria-hidden="true"></i></p>
+                <p class='new-line'>Installation Info</p>
+            </a>
+            <a class='simple-a' href="#">
+                <p class='subhead subhead-spec'><i class="fa fa-photo" aria-hidden="true"></i></p>
+                <p class='new-line'>See Gallery</p>
+            </a>
+            <a class='simple-a' href="#">
+                <p class='subhead subhead-spec'><i class="fa fa-line-chart" aria-hidden="true"></i></p>
+                <p class='new-line'>See ROI cases</p>
+            </a>
+            <!--
+        <a class='simple-a' href="">
+        <p class='subhead subhead-spec'><i class="fa fa-map-marker" aria-hidden="true"></i></p><p class='new-line'>Find {{ product.name}} Cases near you</p>
+      </a> -->
+            <a class='simple-a' href="{% url 'polls:why_led' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-info-circle" aria-hidden="true"></i></p>
+                <p class='new-line'>Learn more about LED technology</p>
+            </a>
+
+        </div>
+        <div class='section-right specs'>
+            <p class='head spec'>{{ product.product_name }} Benefits</p>
+
+            <p class='subhead subhead-spec'><i class="fa fa-leaf" aria-hidden="true"></i>
+                <p class='new-line'>Green Energy. Mercury and UV free.</p>
+                <p class='subhead subhead-spec'><i class="fa fa-percent" aria-hidden="true"></i></p>
+                <p class='new-line'>Save 76.5% per fixture.</p>
+                <p class='subhead subhead-spec'><i class="fa fa-lightbulb-o" aria-hidden="true"></i></p>
+                <p class='new-line'>Up to {{ product.lumens_per_watt }} Lumens per watt</p>
+                <p class='subhead subhead-spec'><i class="fa fa-usd" aria-hidden="true"></i></p>
+                <p class='new-line'>Payback in 36 months</p>
+
+                <p class='subhead subhead-spec'><i class="fa fa-check-square" aria-hidden="true"></i></p>
+                <p class='new-line'>{{ product.check_1 }}</p>
+                <p class='subhead subhead-spec'><i class="fa fa-check-square" aria-hidden="true"></i></p>
+                <p class='new-line'>{{ product.check_2 }}</p>
+                <p class='subhead subhead-spec'><i class="fa fa-check-square" aria-hidden="true"></i></p>
+                <p class='new-line'>{{ product.check_3 }}</p>
+                <p class='subhead subhead-spec'><i class="fa fa-check-square" aria-hidden="true"></i></p>
+                <p class='new-line'>{{ product.check_4 }}</p>
+                <p class='subhead subhead-spec'><i class="fa fa-check-square" aria-hidden="true"></i></p>
+                <p class='new-line'>{{ product.check_5 }}</p>
+
+
+        </div>
+    </div>
+</div>
+<div>
+    <hr>
+    <div class='p-section info-product f-title-container'>
+        <div class='float-title'>Applications<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+
+        <div class='section-left specs min-spec spread'>
+            <p class='subhead subhead-spec'>Applications for {{ product.product_name }}</p>
+            {% ifequal product.isIndoor True %}
+            <a class='simple-a' href="{% url 'polls:indoor_products' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-building" aria-hidden="true"></i></p>
+                <p class='new-line'>Indoor</p>
+            </a>
+            {% else %} {% endifequal %} {% ifequal product.isOutdoor True %}
+            <a class='simple-a' href="{% url 'polls:outdoor_products' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-tree" aria-hidden="true"></i></p>
+                <p class='new-line'>Outdoor</p>
+            </a>
+            {% else %} {% endifequal %} {% ifequal product.isAutomotive True %}
+            <a class='simple-a' href="{% url 'polls:automotive_projects' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-automobile" aria-hidden="true"></i></p>
+                <p class='new-line'>Automotive</p>
+            </a>
+            {% else %} {% endifequal %} {% ifequal product.isInstitutional True %}
+            <a class='simple-a'>
+                <p class='subhead subhead-spec'><i class="fa fa-university" aria-hidden="true"></i></p>
+                <p class='new-line'>Institutional</p>
+            </a>
+            {% else %} {% endifequal %} {% ifequal product.isIndustrial True %}
+            <a class='simple-a'>
+                <p class='subhead subhead-spec'><i class="fa fa-plane" aria-hidden="true"></i></p>
+                <p class='new-line'>Airports</p>
+            </a>
+            {% else %} {% endifequal %} {% ifequal product.isInstitutional True %}
+            <a class='simple-a'>
+                <p class='subhead subhead-spec'><i class="fa fa-hospital-o" aria-hidden="true"></i></p>
+                <p class='new-line'>Hospital</p>
+            </a>
+            {% else %} {% endifequal %} {% ifequal product.isInstitutional True %}
+            <a class='simple-a'>
+                <p class='subhead subhead-spec'><i class="fa fa-hotel" aria-hidden="true"></i></p>
+                <p class='new-line'>Hotel</p>
+            </a>
+            {% else %} {% endifequal %}
+
+        </div>
+        <div class='section-right p-img'>
+            <img src="{{ product.image_2 }}">
+        </div>
+    </div>
+</div>
+<div>
+    <hr>
+
+    <div class='iframe f-title-container'>
+        <div class='float-title'>{{ product.product_name }} Specifications<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+
+        <iframe src="{{ product.pdf_preview }}" width="640" height="480"></iframe>
+    </div>
+    <div class='p-section yellow product-nav'>
+        <a class='simple-a' href="{% url 'polls:product_detail' product.slug %}">
+            <i class="fa fa-arrow-up" aria-hidden="true"></i>
+            <p>Back to the top</p>
+        </a>
+        <a class='simple-a' href="{% url 'polls:products' %}">
+            <p>All Products</p>
+        </a>
+        <a class='simple-a' href="{% url 'polls:case_studies' %}">
+            <p>Case Studies</p>
+        </a>
+        <a class='simple-a' href="#">
+            <i class="fa fa-photo" aria-hidden="true"></i>
+            <p>Gallery</p>
+        </a>
+
+    </div>
+    <div class='p-section product-nav'>
+        <a class='simple-a' href="{% url 'polls:index' %}">
+            <p class='head'>home</p> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+        </a>
+        <a class='simple-a' href="{% url 'polls:products' %}">
+            <p class='head'>Products</p> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+        </a>
+        <a class='simple-a' href="{% url 'polls:product_detail' product.slug %}">
+            <p class='head'>{{ product.product_name }}</p>
+        </a>
+    </div>
+</div>
 </div>
 
-{% include "footer.html" %}
+
+{% include "polls/widgets/product-slider.html" %} {% include "footer.html" %}

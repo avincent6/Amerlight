@@ -1,15 +1,64 @@
-{% include "scripts.html" %}
-{% include "head.html" %}
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'contact.scss' %}" /> {% endcompress %}
 
-{% load compress %}
-{% load staticfiles %}
-
-{% compress css %}
-  <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
-{% endcompress %}
 <div class="nav_wrap">
+    {% include "nav.html" %}
+</div>
+<div class="container-title">
+    <p class="subhead">Free Estimate</p>
+    <h1 class="title-widget">Free Estimate Form</h1>
+    <p>Free Consultation with one of our Lighting Consultants Today</p>
+</div>
+<div>
+    <div class='contact'>
+        <h2>Contact Us Today</h2>
+    </div>
+    <div class='call_us'>
+        <a href="tel:1-812-204-2236">
+            <img src='/static/polls/images/phone_icon.svg'></a>
 
-{% include "nav.html" %}
+        <article>
+            <h3>Call Us</h3>
+            <a href="tel:1-812-431-1204">
+                <h4>812.431.1204</h4>
+            </a>
+            <a href="https://goo.gl/maps/C6UyRozyWbR2" target='_blank'>
+                <p>Amerlight LLC</p>
+                <p>500 N 2nd Ave</p>
+                <p>Evansville, IN 47710</p>
+                <p>United States</p>
+            </a>
+        </article>
+    </div>
+    <div class='call_us'>
+        <a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website" target='_blank'>
+            <img src='/static/polls/images/mail_icon.svg'></a>
+
+        <article>
+            <h3>Email Us</h3>
+            <a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website" target='_blank'>
+                <h4>brians@amerlight.com</h4>
+            </a>
+            <a href="https://goo.gl/maps/qsyLZ8XvriQ2" target='_blank'>
+                <p>Amerlight LLC</p>
+                <p>9200 Petersburg Road</p>
+                <p>Evansville, IN 47725</p>
+                <p>United States</p>
+            </a>
+        </article>
+    </div>
+
+    <div class='faq'>
+        <a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website" target='_blank'>
+            <img src='/static/polls/images/question_icon.svg'></a>
+
+        <article>
+            <h3>Freqenuently Asked Questions</h3>
+            <br>
+            <a class='btn_translucent_d' href="{% url 'polls:faq' %}">See all FAQs</a>
+        </article>
+    </div>
 </div>
 
 {% include "footer.html" %}

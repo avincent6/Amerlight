@@ -1,0 +1,32 @@
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('.slider-for').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '.slider-nav'
+        });
+        $('.slider-nav').slick({
+            slidesToShow: 1,
+            draggable: false,
+            slidesToScroll: 1,
+            asNavFor: '.slider-for',
+            dots: false,
+            variableWidth: true,
+            centerMode: false,
+            focusOnSelect: true,
+            arrows: true,
+            infinite: true,
+            mobileFirst: true,
+        });
+        $('#sliders').slick({
+            accessibility: false
+        });
+        $('.slick-next').addClass(' black ');
+        $('.slick-prev').addClass(' black ');
+    });
+</script>

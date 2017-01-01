@@ -1,15 +1,63 @@
-{% include "scripts.html" %}
-{% include "head.html" %}
-
-{% load compress %}
-{% load staticfiles %}
-
-{% compress css %}
-  <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
-{% endcompress %}
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'about.scss' %}" /> {% endcompress %}
 
 <div class="nav_wrap">
-{% include "nav.html" %}
+    {% include "nav.html" %}
 </div>
 
-{% include "footer.html" %}
+
+<div class="about_div">
+
+    <div class="about_div_info">
+        <h3>Who we are.</h3>
+        <p>Located in Evansville, Indiana, Amerlight is an American based company that manufactures commercial and industrial LED lights.
+            <br>
+            <br> We work directly with customers and distributers engineering the latest technology for efficiency.
+        </p>
+        <br>
+        <a href="{% url 'polls:about' %}" class="btn_translucent_l">Learn More</a>
+
+    </div>
+</div>
+
+<div class="why_amerlight">
+    <div class="why_amerlight_title">
+        <h3>Why Amerlight?</h3>
+    </div>
+    <div class="why_amerlight_c clearfix">
+        <div class="reason clearfix">
+            <img src="/static/polls/images/money_icon.svg" alt="payback_icon">
+            <div class="text-reason">
+                <p>Payback in less than two years</p>
+            </div>
+        </div>
+        <div class="reason clearfix">
+            <img src="/static/polls/images/percent_icon.svg" alt="percent_icon">
+            <div class="text-reason">
+                <p>Save up to 75% on your energy bill.</p>
+            </div>
+        </div>
+        <div class="reason clearfix">
+            <img src="/static/polls/images/brightness_icon.svg" alt="cri_icon">
+            <div class="text-reason">
+                <p>Utilize Amerlight's TrueColor Technology with CRI up to 91+</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="div-pic">
+    <h2>Made in the USA</h2>
+</div>
+<div class="content">
+    <h3>Contact Us</h3>
+    <div class="text">
+        <p>Talk to one of our Lighting Consultants</p>
+        <a href="{% url 'polls:contact'%}" class="btn_solid_d">
+            <p>Find Consultants Near You</p>
+        </a>
+
+    </div>
+</div>
+
+{% include "footer.html" %} }

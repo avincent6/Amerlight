@@ -1,0 +1,452 @@
+body {
+  text-decoration: none;
+  font-family:  'Oxygen';
+  font-weight: 300;
+  margin: 0;
+  color: black;
+  background: #00A2D0;
+}
+.main {
+}
+.lol {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: red;
+}
+.lol #image {
+  width: 300%;
+  height: 100%;
+  position: relative;
+}
+#image {
+  width: 100%;
+  height: auto;
+  background-image: url(evansville.svg);
+
+}
+button {
+  border-radius: 0px;
+  border: 2px solid white;
+  background: rgba(0,0,0,0);
+  color: white;
+  font-size: 17px;
+  height: 40px;
+  padding: 10px;
+}
+
+p {
+  padding: 0;
+}
+
+img {
+  height: 100%;
+  width: 100%:
+  position: relative;
+}
+#cimg {
+  max-width: 300px;
+  height: auto;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: gray;
+}
+
+/* Anti-mobile and mobile Navbar*/
+.banner {
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+}
+
+.brand {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.logo {
+  width: 200px;
+}
+.nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-left: 50px;
+  padding-right: 30px;
+  margin: auto;
+  list-style-type: none;
+  text-decoration: none;
+}
+#fa-bars {
+  padding-top: 5px;
+  padding-right: 15px;
+  display: none;
+}
+
+.item1, .item2, .item3, .item4 {
+  flex: none;
+  font-size:10px;
+  padding-top: 10px;
+  padding: 30px;
+  text-decoration: none;
+  flex-grow: 2;
+}
+
+@media only screen and (max-width: 850px) {
+  .item1, .item2, .item3, .item4 {
+    padding: 10px;
+    font-size: 9px;
+  }
+}
+@media only screen and (max-width: 655px) {
+  .nav {
+    padding-right: 0px;
+  }
+}
+@media only screen and (max-width: 605px) {
+  .item1, .item2, .item3, .item4  {
+    display: none;
+  }
+  .logo {
+    width: 150px;
+  }
+  .brand {
+    padding-left: 8px;
+  }
+  .nav {
+    padding-left: 25px;
+  }
+  #fa-bars {
+    display: inline;
+  }
+}
+/* end anti-mobile navbar*/
+
+/* landing-div */
+.landing-top {
+  background: none;
+  position: relative;
+}
+.landing-pic {
+  position: absolute;
+}
+
+.free_estimate_btn>p, .case_studies_btn>p{
+  text-align: center;
+  margin-top: -2px;
+}
+.free_estimate_btn {
+  font-family: 20px;
+}
+.case_studies_btn {
+  margin-left: 40px;
+}
+.button_container {
+
+  background: none;
+  position: absolute;
+  top: 80%;
+  height: 40px;
+  width: auto;
+  margin-left: 11%;
+}
+/* end Landing Div */
+
+/* Why Amerlight Div*/
+.why {
+
+  height: 600px;
+  text-align: center;
+  display: block;
+  background: none;
+  position: relative;
+}
+.why_amerlight {
+
+position: absolute;
+width: 100%;
+text-align: center;
+z-index: -1;
+background: green;
+}
+
+.why_amerlight>h3 {
+  text-align: center;
+}
+.why_amerlight_title {
+  width: 100%;
+  text-align: center;
+  background: none;
+  height: auto;
+  position: absolute;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  z-index: 99;
+}
+.why_amerlight_c {
+
+  display: flex;
+  position: absolute;
+  padding-top: 10%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background: none;
+  z-index: 99;
+}
+.reason_1, .reason_2, .reason_3 {
+  padding: 30px;
+  margin: 60px;
+  background: none;
+  height: 200px;
+  width: 200px;
+}
+@media only screen and (max-width: 840px) {
+  .reason_1, .reason_2, .reason_3 {
+      margin: 10px;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .reason_1, .reason_2, .reason_3 {
+      margin: 40px;
+  }
+
+}
+}
+h2 {
+  font-size: 20px;
+  margin-bottom: 50px;
+}
+/* end Why Amerlight Div */
+
+/* Companies Div */
+.comapnies_div {
+  height: 330px;
+  width: auto;
+  text-align: center;
+  display: block;
+}
+.companies_div_info {
+  margin-top: 50px;
+  text-align: center;
+
+  position: relative;
+  z-index: -1;
+}
+.companies_div_info>h3 {
+  text-align: center;
+
+}
+.company_underline {
+  align-items: center;
+}
+
+.company_pic_container {
+  margin-top: 5%;
+  display: flex;
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  background: none;
+  z-index: 99;
+}
+.company_pic_container>a>img {
+  width: 100px;
+  height: auto;
+  margin: 20px;
+  align-items: center;
+}
+/* end Companies Dic */
+
+/* About Who We Are Div */
+.about_div {
+  position: relative;
+  background: red;
+  width: 100%;
+  height: auto;
+  background: none;
+  z-index: -3;
+  display: block;
+
+}
+.map_pic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.about_div_info {
+  position: absolute;
+  background: none;
+  display: flex;
+  flex-wrap: wrap;
+  top: 10%;
+  width: 50%;
+  margin-left: 45%;
+  margin-right: 5%;
+  z-index: 99;
+
+}
+.about_div_info>p, .about_div_info>h3 {
+  color: white;
+}
+.about_btn>p {
+  margin-top: -4px;
+}
+/* end About Who we are. Div */
+
+/* Sign and Light Div */
+.sign_and_light_div {
+  background: none;
+  position: relative;
+  height: 350px;
+  padding-top: 15px;
+}
+.sign_and_light_title {
+  width: 100%;
+  text-align: center;
+  background: none;
+}
+.sign_and_light_div_info {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 25%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background: none;
+}
+.sign_pen_icon {
+  margin: 4%;
+}
+.sign_btn {
+  text-align: center;
+  background: #2C2C2C;
+  margin: 4%;
+  border: none;
+
+}
+.sign_btn>p {
+  text-align: center;
+  margin-top: -17px;
+  color: white;
+  padding: 15px;
+}
+/* end Sign and Light Div */
+
+/* synapse div */
+.synapse_king {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background: none;
+  z-index: -3;
+}
+.synapse_div {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.synapse_pic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.synapse_info_div {
+  position: absolute;
+  top: 20%;
+  margin-left: 11%;
+  width: 45%;
+}
+.synapse_info_div>h3, .synapse_info_div>p {
+  color: white;
+}
+.synapse_btn {
+  background: none;
+  z-index: 99;
+
+}
+.synapse_btn>p {
+  text-align: center;
+  margin-top: -2px;
+}
+/*end synapse div*/
+
+/* Start Your Project Div*/
+.start_your_project {
+  height: 230px;
+  width: auto;
+}
+.start_your_project_info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.start_your_project_btn {
+  text-align: center;
+  background: #2C2C2C;
+  margin: 60px;
+  border: none;
+  border-radius: 5px;
+}
+.start_your_project_btn>p {
+  text-align: center;
+  margin-top: -17px;
+  color: white;
+  padding: 15px;
+}
+/* end Start Your Project Div*/
+/* anti-mobile footer */
+
+/* end antimobile footer*/
+
+/* footer*/
+.footer {
+  height: 300px;
+  background: #2C2C2C;
+}
+.footer>p {
+  color: white;
+}
+.footer_below {
+  position: relative;
+  height: 30px;
+  background: #111;
+}
+.logo_board {
+  position: absolute;
+  margin-left: 10px;
+  top: -17px;
+}
+.copyright {
+  position: absolute;
+  margin-left: 50px;
+  top: -17px;
+    display: block;
+    font-size: 10px;
+    color: white;
+  }
+#mail_icon {
+  color: white;
+}
+/* end footer */
+
+@@font-face {
+  font-family: Avenir_Next;
+  src: url(Avenir_Next.ttc);
+}

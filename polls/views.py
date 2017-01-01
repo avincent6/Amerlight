@@ -4,9 +4,12 @@ from django.core.urlresolvers import reverse
 from django.views import generic
 from django.views.generic import ListView
 from django.views.generic import DetailView
-
-
-from .models import Choice, Question, Product, CaseStudie
+from django import forms
+from .forms import ContactForm
+from django.template.loader import get_template
+from django.core.mail import EmailMessage
+from django.template import Context
+from .models import Choice, Question, Product, CaseStudie, Faq
 
 from itertools import chain
 def concat():
@@ -14,7 +17,44 @@ def concat():
     all_products = Product.objects.all()
     result_list = list(chain(all_case_studies, all_products))
     return result_list
+def contact(request):
+    form_class = ContactForm
 
+    if request.method == 'POST':
+        form = form_class(data=request.POST)
+
+        if form.is_valid():
+            contact_name = request.POST.get(
+                'contact_name'
+            , '')
+            contact_email = request.POST.get(
+                'contact_email'
+            , '')
+            form_content = request.POST.get('content', '')
+
+            # Email the profile with the
+            # contact information
+            template = get_template('contact_template.txt')
+            context = Context({
+                'contact_name': contact_name,
+                'contact_email': contact_email,
+                'form_content': form_content,
+            })
+            content = template.render(context)
+
+            email = EmailMessage(
+                "New contact form submission",
+                content,
+                "Your website" +'',
+                ['youremail@gmail.com'],
+                headers = {'Reply-To': contact_email }
+            )
+            email.send()
+            return redirect('contact')
+
+    return render(request, 'contact.html', {
+        'form': form_class,
+    })
 
 class IndexView(generic.ListView):
     template_name = 'polls/index.html'
@@ -257,6 +297,17 @@ class InsdustrialCaseStudieList(ListView):
     template_name = 'polls/case.html'
     def get_context_data(self, **kwargs):
         context = super(InsdustrialCaseStudieList, self).get_context_data(**kwargs)
+        context['all_case_studies'] = CaseStudie.objects.all()
+        context['all_products'] = Product.objects.all()
+        # And so on for more models
+        return context
+
+class FaqView(generic.ListView):
+    context_object_name = 'frequently_asked_questions'
+    queryset = Faq.objects.all()
+    template_name = 'polls/faq.html'
+    def get_context_data(self, **kwargs):
+        context = super(FaqView, self).get_context_data(**kwargs)
         context['all_case_studies'] = CaseStudie.objects.all()
         context['all_products'] = Product.objects.all()
         # And so on for more models

@@ -1,0 +1,38 @@
+li {
+  &.entity {
+    &.transaction {
+      &.pending {
+        color: #333333;
+        .subtext {
+          color: red;
+        }
+      }
+    }
+  }
+}
+.status-bar {
+  &.highlight {
+    &.networth {
+      .amount {
+        .positive {
+          color: green;
+        }
+      }
+    }
+  }
+}
+.span.balance.positive
+
+.row {
+  .balance {
+    &.col-xs-4 {
+      .balance-amount {
+        .balance {
+          &.positive {
+            color: #33333;
+          }
+        }
+      }
+    }
+  }
+}

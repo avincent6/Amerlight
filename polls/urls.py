@@ -1,6 +1,5 @@
 from django.conf.urls import url
-from .views import ProductList, IndoorProductList, OutdoorProductList, ProductDetailView, CaseStudieList, CaseStudieDetailView, AutomotiveCaseStudieList, InstitutionalCaseStudieList, InsdustrialCaseStudieList, AboutView, ContactView, WhyAmerlightView, WhyLedView, AdvantageView, SignLightView, EstimateView, SalesSearchView, StartView
-
+from .views import ProductList, FaqView, IndoorProductList, OutdoorProductList, ProductDetailView, CaseStudieList, CaseStudieDetailView, AutomotiveCaseStudieList, InstitutionalCaseStudieList, InsdustrialCaseStudieList, AboutView, ContactView, WhyAmerlightView, WhyLedView, AdvantageView, SignLightView, EstimateView, SalesSearchView, StartView
 from . import views
 
 app_name = 'polls'
@@ -30,5 +29,12 @@ urlpatterns = [
     url(r'^estimate/$', EstimateView.as_view(), name='estimate'),
     url(r'^sales_search/$', SalesSearchView.as_view(), name='sales_search'),
     url(r'^start/$', StartView.as_view(), name='start'),
+    url(r'^faq/$', FaqView.as_view(), name='faq'),
 
 ]
+
+
+#install
+#gallery
+#roi
+#

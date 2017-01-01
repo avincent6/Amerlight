@@ -1,15 +1,15 @@
-{% include "scripts.html" %}
-{% include "head.html" %}
-
-{% load compress %}
-{% load staticfiles %}
-
-{% compress css %}
-  <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
-{% endcompress %}
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" /> {% endcompress %}
 
 <div class="nav_wrap">
-{% include "nav.html" %}
+    {% include "nav.html" %}
+</div>
+<div class="container-title">
+    <p class="subhead">Sign and Light</p>
+    <h1 class="title-widget">Sign and Light</h1>
+</div>
+<div>
+    <h1>Coming Soon</h1>
 </div>
 
 {% include "footer.html" %}

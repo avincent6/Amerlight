@@ -1,36 +1,33 @@
-{% include "scripts.html" %}
-{% include "head.html" %}
-
-{% load compress %}
-{% load staticfiles %}
-
-{% compress css %}
-  <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
-  <link rel="stylesheet" type="text/scss" href="{% static 'list.scss' %}" />
-{% endcompress %}
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'list.scss' %}" /> {% endcompress %}
 
 <div class="nav_wrap">
-{% include "nav.html" %}
+    {% include "nav.html" %}
 </div>
-<div class='case_studies'>
+<div class='list_container'>
 
-{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    {% if error_message %}
+    <p><strong>{{ error_message }}</strong></p>{% endif %}
 
 
     <h2>Case Studies</h2>
-    <div class='product_box2'>
+    <div class='object_list'>
 
-          <ul>
+        <ul>
 
-        {% for casestudie in object_list %}<div class="product_box">
-            <a href="{% url 'polls:case_detail' casestudie.slug %}">
-            <li class="product_li">{{ casestudie.project_name }}</li>
-            <img class='product_image' src='{{ casestudie.image_1 }}'>
-          </a>
-        </div>{% endfor %}
+            {% for casestudie in object_list %}
+            <div class="object_box">
+                <a href="{% url 'polls:case_detail' casestudie.slug %}">
+                    <li>
+                        <p>{{ casestudie.project_name }}</p>
+                    </li>
+                    <img src='{{ casestudie.image_1 }}'>
+                </a>
+            </div>{% endfor %}
 
-    </ul>
-  </div>
+        </ul>
+    </div>
 </div>
 
 {% include "footer.html" %}

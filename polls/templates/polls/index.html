@@ -1,21 +1,94 @@
-{% load staticfiles %}
-{% load compress %}
-{% compress css %}
-    <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
-{% endcompress %}
+{% load staticfiles %} {% load compress %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'landing_main.scss' %}" /> {% endcompress %} {% include "nav.html" %}
 
-{% include "nav.html" %}
+<div class="aspot_main clearfix">
+    <div>
+        <h1>Amerlight</h1>
+        <h3>How much could LED be saving you money?</h3>
+        <p>Find out how Amerlight can work with you.</p>
+        <a class="btn_translucent_d clearfix" href="{% url 'polls:estimate' %}">Free Estimate</a>
+        <a class="btn_translucent_d clearfix" href="{% url 'polls:case_studies' %}">Case Studies</a>
+    </div>
+</div>
+<div class="why_amerlight">
+    <div class="why_amerlight_title">
+        <h3>Why Amerlight?</h3>
+    </div>
+    <div class="why_amerlight_c clearfix">
+        <div class="reason clearfix">
+            <img src="/static/polls/images/money_icon.svg" alt="payback_icon">
+            <div class="text-reason">
+                <p>Payback in less than two years</p>
+            </div>
+        </div>
+        <div class="reason clearfix">
+            <img src="/static/polls/images/percent_icon.svg" alt="percent_icon">
+            <div class="text-reason">
+                <p>Save up to 75% on your energy bill.</p>
+            </div>
+        </div>
+        <div class="reason clearfix">
+            <img src="/static/polls/images/brightness_icon.svg" alt="cri_icon">
+            <div class="text-reason">
+                <p>Utilize Amerlight's TrueColor Technology with CRI up to 91+</p>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'polls:advantage' %}"></a>
+</div>
+
+<div class="comapnies_div">
+    <div class="companies_div_info">
+        <h3>Companies who switched with Amerlight.</h3>
+        <div class="company_container">
+
+            <a href=""><img src="/static/polls/images/lexus_logo.png" alt="lexus_logo"></a>
+            <a href=""><img src="/static/polls/images/deaconess_logo_g.png" alt="deaconess_logo_g"></a>
+            <a href=""><img src="/static/polls/images/holiday_inn_g.png" alt="holiday_inn_g"></a>
+            <a href=""><img src="/static/polls/images/conoco.png" alt="cogo_logo_g"></a>
+
+        </div>
+    </div>
+</div>
 
 
-        {% for case in all_case_studies %}<div class="product_box">
-            <a href="{% url 'polls:case_detail' case.slug %}"><li class="product_li">{{ case.project_name }}</li>
-            <img class='product_image' src='{{ case.image_1 }}'></a>
-        </div>{% endfor %}
+<div class="about_div">
 
-                {% for product in all_products %}<div class="product_box">
-                    <a href="{% url 'polls:product_detail' product.slug %}"><li class="product_li">{{ product.product_name }}</li>
-                    <img class='product_image' src='{{ product.image_1 }}'></a>
-                </div>{% endfor %}
+    <div class="about_div_info">
+        <h3>Who we are.</h3>
+        <p>Located in Evansville, Indiana, Amerlight is an American based company that manufactures commercial and industrial LED lights.
+            <br>
+            <br> We work directly with customers and distributers engineering the latest technology for efficiency.
+        </p>
+        <br>
+        <a href="{% url 'polls:about' %}" class="btn_translucent_l">Learn More</a>
+
+    </div>
+</div>
 
 
-{% include "footer.html" %}
+<div class="content">
+    <h3>Sign and Light with Amerlight.</h3>
+    <div class="text">
+        <img src="/static/polls/images/sign.png" alt="sign and light">
+        <a href="{% url 'polls:sign_light'%}" class="btn_solid_d">
+            <p>Learn More</p>
+        </a>
+
+    </div>
+</div>
+
+
+<div class="content">
+    <h3>Start your project</h3>
+    <div class="text">
+        <p>Retrofit your project with Amerlight today.</p>
+        <a href="{% url 'polls:start'%}" class="btn_solid_d">
+            <p>Start Your Project</p>
+        </a>
+
+    </div>
+</div>
+
+{% include "polls/widgets/case-slider.html" %} {% include "footer.html" %}

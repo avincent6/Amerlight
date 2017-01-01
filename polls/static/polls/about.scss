@@ -1,0 +1,25 @@
+@import "partials/vars";
+@import "partials/who";
+@import "partials/why_amerlight";
+@import "partials/heading";
+
+.div-pic {
+  height: 300px;
+  width: auto;
+  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url('/static/polls/images/flag.jpg'));
+  opacity: 0.5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  h2 {
+    color: $white;
+    font-weight: 100;
+    text-transform: uppercase;
+    opacity: 1;
+    text-shadow: 0 3px 3px $dark;
+    text-align: center;
+    top: 45%;
+    position: relative;
+  }
+}

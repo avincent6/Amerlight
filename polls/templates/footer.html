@@ -1,85 +1,126 @@
-
 <div class='footer'>
-  <div class="footer_top">
-  <div class="buttons clearfix section">
-    <a href="#" class="btn_translucent_l">Contact Us</a><br>
-    <a href="#" class="btn_translucent_l">Online Estimate</a>
-  </div>
-  <div class="sitemap clearfix section">
-    <p>Sitemap</p>
-    <br>
-    <div class="clearfix">
-    <p>Home</p>
-    <p>Products</p>
-    <p>Case Studies</p>
-    <p>Why Amerlight?</p>
-    <p>Start A Project</p>
-  </div>
-  <div class="clearfix links">
-    <p>About Us</p>
-    <p>Contact Us</p>
-    <p>Why LED?</p>
-    <p>Find a Sales Rep</p>
-    <p>Online Estimate</p>
-  </div>
-  </div>
-</div>
-<div class="footer_bottom">
-  <div class=" clearfix">
-
-   <div class="newletter section clearfix">
-     <!-- Begin MailChimp Signup Form -->
-
-<form action="//amerlight.us13.list-manage.com/subscribe/post?u=350195f13a9f90da0712554c2&amp;id=cc6ffd157d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate clearfix" target="_blank" novalidate>
-    <div id="mc_embed_signup_scroll">
-	<p>Subscribe to our mailing list</p>
-<div class="indicates-required"><span class="asterisk"></span></div>
-<div class="mc-field-group">
-	<label for="mce-EMAIL"><span class="asterisk"></span>
-</label>
-	<input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email">
-</div>
-<div class="mc-field-group">
-	<label for="mce-FNAME"></label>
-	<input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="First Name">
-</div>
-<div class="mc-field-group">
-	<label for="mce-LNAME"></label>
-	<input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="Last Name">
-</div>
-	<div id="mce-responses" class="clear">
-		<div class="response" id="mce-error-response" style="display:none"></div>
-		<div class="response" id="mce-success-response" style="display:none"></div>
-	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_350195f13a9f90da0712554c2_cc6ffd157d" tabindex="-1" value=""></div>
-    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn_translucent_l button"></div>
+    <div class="footer_top">
+        <div class="buttons clearfix section">
+            <a href="{% url 'polls:contact' %}" class="btn_translucent_l">Contact Us</a>
+            <br>
+            <a href="{% url 'polls:estimate' %}" class="btn_translucent_l">Online Estimate</a>
+        </div>
+        <div class="sitemap clearfix section">
+            <p>Sitemap</p>
+            <br>
+            <div class="clearfix">
+                <a href="{% url 'polls:index' %}">
+                    <p>Home</p>
+                </a>
+                <a href="{% url 'polls:products' %}">
+                    <p>Products</p>
+                </a>
+                <a href="{% url 'polls:case_studies' %}">
+                    <p>Case Studies</p>
+                </a>
+                <a href="{% url 'polls:why_amerlight' %}">
+                    <p>Why Amerlight?</p>
+                </a>
+                <a href="{% url 'polls:start' %}">
+                    <p>Start A Project</p>
+                </a>
+            </div>
+            <div class="clearfix links">
+                <a href="{% url 'polls:about' %}">
+                    <p>About Us</p>
+                </a>
+                <a href="{% url 'polls:contact' %}">
+                    <p>Contact Us</p>
+                </a>
+                <a href="{% url 'polls:why_led' %}">
+                    <p>Why LED?</p>
+                </a>
+                <a href="{% url 'polls:sales_search' %}">
+                    <p>Find a Sales Rep</p>
+                </a>
+                <a href="{% url 'polls:estimate' %}">
+                    <p>Online Estimate</p>
+                </a>
+            </div>
+        </div>
     </div>
-</form>
+    <div class="footer_bottom">
+        <div class=" clearfix">
+
+            <div class="newsletter section clearfix">
+                <!-- Begin MailChimp Signup Form -->
+                {% csrf_token %}
+
+                <form action="//amerlight.us13.list-manage.com/subscribe/post?u=350195f13a9f90da0712554c2&amp;id=cc6ffd157d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate clearfix" target="_blank" novalidate>
+                    <div id="mc_embed_signup_scroll">
+                        <p>Subscribe to our mailing list</p>
+                        <div class="indicates-required"><span class="asterisk"></span></div>
+                        <div class="mc-field-group">
+                            <label for="mce-EMAIL"><span class="asterisk"></span>
+                            </label>
+                            <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="email">
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-FNAME"></label>
+                            <input type="text" value="" name="FNAME" class="" id="mce-FNAME" placeholder="First Name">
+                        </div>
+                        <div class="mc-field-group">
+                            <label for="mce-LNAME"></label>
+                            <input type="text" value="" name="LNAME" class="" id="mce-LNAME" placeholder="Last Name">
+                        </div>
+                        <div id="mce-responses" class="clear">
+                            <div class="response" id="mce-error-response" style="display:none"></div>
+                            <div class="response" id="mce-success-response" style="display:none"></div>
+                        </div>
+                        <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                            <input type="text" name="b_350195f13a9f90da0712554c2_cc6ffd157d" tabindex="-1" value="">
+                        </div>
+                        <div class="clear">
+                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="btn_translucent_l button">
+                        </div>
+                    </div>
+                </form>
 
 
-<!--End mc_embed_signup-->
-</div>
-</div><div class="section clearfix">
-  <div class="map">
-    <a href="https://goo.gl/maps/qsyLZ8XvriQ2"><img src="/static/polls/images/location.svg" class="loco"></a>
-</div>
- <div class="address clearfix">
-<p>Amerlight LLC</p>
-<p>9200 Petersburg Road</p>
-<p>Evansville, IN 47725</p>
-<p>United States</p>
-<br>
-<a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website"><p>brians@amerlight.com</p></a>
-<a href="tel:1-812-204-2236"><p>812.204.2236</p>
-  <a href="https://amerlight.com"><p>amerlight.com</p></a>
-<i id='mail_icon' class="fa fa-envelope" aria-hidden="true"></i>
-</div>
-</div>
-   </div>
+                <!--End mc_embed_signup-->
+            </div>
+        </div>
+        <div class="section contact-info clearfix">
+            <div class="map">
+                <a href="https://goo.gl/maps/qsyLZ8XvriQ2"><img src="/static/polls/images/location.svg" class="loco"></a>
+            </div>
+            <div class="address clearfix">
+                <a href="https://goo.gl/maps/qsyLZ8XvriQ2">
+                    <p>Amerlight LLC</p>
+                    <p>9200 Petersburg Road</p>
+                    <p>Evansville, IN 47725</p>
+                    <p>United States</p>
+                </a>
+                <br>
+                <a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website">
+                    <p>brians@amerlight.com</p>
+                </a>
+                <a href="tel:1-812-204-2236">
+                    <p>812.204.2236</p>
+                </a>
+                <a href="https://amerlight.com">
+                    <p>amerlight.com</p>
+                </a>
+                <a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website">
+                    <i id='mail_icon' class="fa fa-envelope" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/company/amerlight-llc">
+                    <i id='mail_icon' class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a href="https://plus.google.com/111110762748779508277/about">
+                    <i id='mail_icon' class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </div>
+        </div>
+    </div>
 </div>
 <div class='footer_below'>
-  <a href="#"><img class='logo_board' src="/static/polls/images/logo_board.png"></a>
-   <p class='copyright'>Copyright &copy; 2016  Amerlight, LLC</time></p>
+    <a href="#"><img class='logo_board' src="/static/polls/images/logo_board.png"></a>
+    <p class='copyright'>Copyright &copy; 2016 Amerlight, LLC</time>
+    </p>
 </div>
 </div>
 </div>
