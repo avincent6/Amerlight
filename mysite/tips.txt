@@ -1,4 +1,4 @@
-For Pictures on the web
+   For Pictures on the web
 
 https://drive.google.com/uc?export=view&id={fileId}
 
@@ -147,5 +147,5 @@ pip install --user [package]
 todos
 - css with footer form
 - free consultation
-- all sales members
+- all sales membersitit
 - mobile menu
