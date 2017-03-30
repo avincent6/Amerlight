@@ -1,0 +1,13 @@
+@import 'vars';
+
+.luxbar {
+  z-index: 10;
+  .luxbar-item, li, luxbar-menu, div {
+    z-index: 10;
+  }
+}
+
+div {
+  z-index: 10;
+
+}
