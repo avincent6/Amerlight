@@ -1,0 +1,35 @@
+@import "vars";
+
+.list_container {
+  &.faq-list {
+    .object_list {
+      text-align: left;
+
+      ul {
+        .object_box {
+          padding: 20px;
+          box-shadow: 0 0 20px rgba(0,0,0,0.1);
+          min-width: 700px;
+          @media (max-width: $tablet_l) {
+            min-width: 245px;
+          }
+
+          li {
+            p {
+              &.subhead {}
+
+            }
+
+            a {
+              padding: 15px 25px;
+
+              &:hover {
+                border: 2px solid $dark;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

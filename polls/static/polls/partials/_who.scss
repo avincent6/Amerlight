@@ -1,0 +1,33 @@
+.about_div {
+  background-image: url("/static/polls/images/countries.png");
+  background-color: $black;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+  height: auto;
+  @media (max-width: $tablet-s) {
+    background-position: left 0 top 30px;
+    padding-top: 50%;
+
+  }
+
+  .about_div_info {
+    padding: 20px;
+    text-align: left;
+    color: $white;
+    max-width: 500px;
+    margin-left: 50%;
+    @media (max-width: $tablet_s) {
+      margin-left: 10%;
+    }
+    @media (max-width: $mobile_s) {
+      margin-left: 0;
+    }
+
+    p {
+      font-weight: 100;
+      display: block;
+    }
+  }
+}

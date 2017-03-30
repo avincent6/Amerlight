@@ -1,0 +1,284 @@
+@charset "utf-8";
+@import 'partials/vars.scss';
+@import "partials/nav";
+@import "partials/footer";
+@import "partials/slider-div";
+
+body {
+  background: #ECC561;
+  text-align: center;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 18.75em;
+  margin-top: 6em;
+}
+
+h1 {
+  color: rgba(0,0,0,0.5);
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.8em;
+  font-weight: 400;
+  margin: 0;
+}
+
+.doc {
+  margin: 3em 0;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.1em;
+  font-weight: 300;
+
+  a {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 0.75em 0.7em;
+    color: white;
+    text-decoration: none;
+    transition: color 0.1s linear;
+
+    &:hover {
+      background: rgba(0,0,0,0.2);
+      color: white;
+      transition: all 0.15s linear;
+    }
+  }
+}
+
+.welcome {
+  -webkit-animation-name: welcome;
+  -webkit-animation-duration: 0.9s;
+}
+@-webkit-keyframes welcome {
+  from {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+
+  82.5% {
+    -webkit-transform: scale(1.03);
+    -webkit-animation-timing-function: ease-out;
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: scale(1);
+  }
+}
+
+body {
+  background: $white;
+  font-size: $p;
+  font-family: $font;
+  position: relative;
+}
+
+h1 {
+  font-size: $h1;
+}
+
+h2 {
+  font-size: $h2;
+}
+
+h3 {
+  font-size: $h3;
+}
+
+h4 {
+  font-size: $h4;
+}
+
+p {
+  font-size: $p;
+  font-weight: 300;
+}
+
+.subtext {
+  font-size: $subtext;
+}
+
+.background {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.dark {
+  color: $dark;
+}
+
+.white {
+  color: $white;
+}
+
+.containter {}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 0;
+  color: $dark;
+
+  &:hover {
+    color: $darkLight;
+  }
+
+  &:active {
+    color: $dark;
+  }
+}
+
+.btn_solid_l {
+  border: 2px solid $white;
+  background: $white;
+  color: $dark;
+
+  &:hover {
+    border: 2px solid $gray;
+    background: $gray;
+    color: $white;
+  }
+
+  &:active {
+    border: 2px solid $dark;
+    background: $dark;
+    color: $white;
+  }
+}
+
+.btn_solid_d {
+  border: 2px solid $dark;
+  background: $dark;
+  color: $white;
+
+  &:hover {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+  }
+
+  &:active {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+  }
+}
+
+.btn_translucent_l {
+  border: 2px solid $white;
+  background: none;
+  color: $white;
+
+  &:hover {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+  }
+
+  &:active {
+    border: 2px solid $dark;
+    background: $dark;
+    color: $white;
+  }
+}
+
+.btn_translucent_d {
+  border: 2px solid $dark;
+  background: none;
+  color: $dark;
+
+  &:hover {
+    border: 2px solid $gray;
+    background: $gray;
+    color: $white;
+  }
+
+  &:active {
+    border: 2px solid $white;
+    background: $white;
+    color: $dark;
+
+  }
+}
+
+// mailchhimp subscribe form
+input:-webkit-autofill,
+select:-webkit-autofill,
+textarea:-webkit-autofill {
+  background-color: none;
+  color: $grayLight;
+  border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+
+}
+
+#cimg {
+  max-height: 300px;
+  height: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.button {
+  position: relative;
+  top: 150px;
+  z-index: 1;
+  text-align: center;
+
+  &.btn_solid_l {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 15px 25px;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.5);
+      border-color: $white;
+    }
+  }
+}
+
+.subhead {
+  text-transform: uppercase;
+  font-size: $subtext;
+  font-weight: 600;
+}
+
+.container-title {
+  text-align: left;
+  background: $yellow;
+  padding: 50px 20px 50px 25%;
+  @media (max-width: $tablet_l) {
+    padding: 50px 20px;
+  }
+
+  .title-widget {
+    font-weight: 300;
+    color: $white;
+    font-size: 40px;
+  }
+}
+
+.case-slider {
+  min-height: 400px;
+}

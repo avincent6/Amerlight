@@ -1,0 +1,39 @@
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'partials/_why_amerlight.scss' %}" /> {% endcompress %}
+
+<div class="nav_wrap">
+    {% include "nav.html" %}
+</div>
+<div class="container-title">
+    <p class="subhead">Why LED</p>
+    <h1 class="title-widget">LED Performance Advantages</h1>
+</div>
+<div class="why_amerlight">
+    <div class="why_amerlight_title">
+        <h3>Why LED?</h3>
+    </div>
+    <div class="why_amerlight_c clearfix">
+        <div class="reason clearfix">
+            <img src="/static/polls/images/money_icon.svg" alt="payback_icon">
+            <div class="text-reason">
+                <p>Payback in less than two years</p>
+            </div>
+        </div>
+        <div class="reason clearfix">
+            <img src="/static/polls/images/percent_icon.svg" alt="percent_icon">
+            <div class="text-reason">
+                <p>Save up to 75% on your energy bill.</p>
+            </div>
+        </div>
+        <div class="reason clearfix">
+            <img src="/static/polls/images/brightness_icon.svg" alt="cri_icon">
+            <div class="text-reason">
+                <p>Utilize Amerlight's TrueColor Technology with CRI up to 91+</p>
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'polls:advantage' %}"></a>
+</div>
+
+{% include "footer.html" %}

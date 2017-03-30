@@ -1,0 +1,82 @@
+@import 'partials/vars.scss';
+
+.list_container {
+  display: inline-block;
+  padding: 20px;
+  text-align: center;
+  @media (max-width: $mobile_m) {
+    padding: 0;
+  }
+
+  h2 {}
+
+  .object_list {
+    vertical-align: top;
+    text-align: center;
+
+    ul {
+      padding: 0;
+      @media (max-width: 1105px) {}
+
+      .object_box {
+        border-bottom: 1px solid rgba(151, 151, 151, 0.1);
+        border-left: 1px solid rgba(151, 151, 151, 0.1);
+
+        border-right: 1px solid rgba(151, 151, 151, 0.1);
+        margin: 20px;
+        display: inline-block;
+        @media only screen and (max-width: $mobile_l) {
+          margin: 10px;
+        }
+        @media only screen and (max-width: $mobile_m) {}
+
+        a {
+          display: inline-block;
+          float: left;
+          clear: both;
+          padding: 0;
+
+          p {
+            margin: 0;
+            padding: 20px;
+            @media only screen and (max-width: $mobile_l) {
+              padding: 10px 15px;
+            }
+
+          }
+
+          li {
+            float: left;
+            clear: both;
+            list-style: none;
+            display: inline-block;
+            background: $dark;
+            width: 100%;
+            color: white;
+            border-radius: 3px 3px 0 0;
+            text-align: left;
+          }
+
+          img {
+            width: 250px;
+            height: auto;
+            float: left;
+            clear: both;
+            padding: 50px;
+            display: inline-block;
+            padding: 20px;
+            @media only screen and (max-width: $tablet_s) {
+              width: 150px;
+              padding: 10px;
+            }
+            @media only screen and (max-width: $mobile_m) {
+              padding: 5px;
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

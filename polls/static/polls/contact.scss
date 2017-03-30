@@ -1,0 +1,79 @@
+@import 'partials/vars';
+
+.contact {
+  background: $yellow;
+  padding: 20px;
+
+  h2 {
+    color: $white;
+    text-align: center;
+    padding: 0;
+  }
+}
+
+.call_us,
+.faq {
+  display: inline-block;
+  padding: 100px 0;
+  position: relative;
+  text-align: left;
+  margin-left: 5%;
+  @media (max-width: $tablet_m) {
+    margin-left: 5%;
+  }
+  @media (max-width: $tablet_sm) {
+    margin-left: 10%;
+  }
+  @media (max-width: $tablet_s) {}
+  @media (max-width: $mobile_l) {
+    padding: 50px 0;
+  }
+  @media (max-width: $mobile_m) {
+    margin-left: 10%;
+  }
+
+  a {
+    padding: 0;
+    cursor: pointer;
+  }
+
+  img {
+    max-width: 100px;
+    position: absolute;
+    top: 20%;
+    @media (max-width: $mobile_m) {
+      max-width: 70px;
+    }
+  }
+
+  article {
+    padding: 0 20px 0 140px;
+    @media (max-width: $mobile_m) {
+      padding: 0 20px 0 100px;
+    }
+
+    p {
+      @media (max-width: $mobile_m) {
+        font-size: $subtext;
+      }
+    }
+  }
+}
+
+.faq {
+  @media (min-width: 1400px) {
+    margin: 0 30%;
+    padding: 20px 0 100px;
+  }
+  @media (max-width: $laptop_s) {
+    img {
+      top: 30%;
+    }
+  }
+
+  a {
+    padding: 15px;
+  }
+  padding-bottom: 100px;
+
+}

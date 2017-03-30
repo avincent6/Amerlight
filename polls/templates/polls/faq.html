@@ -1,0 +1,33 @@
+{% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
+<link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'partials/_faq.scss' %}" />
+<link rel="stylesheet" type="text/scss" href="{% static 'list.scss' %}" /> {% endcompress %}
+<div class="nav_wrap">
+
+    {% include "nav.html" %}
+</div>
+<div class="container-title">
+    <p class="subhead">FAQs</p>
+    <h1 class="title-widget">Frequently Asked Questions</h1>
+</div>
+<div>
+    <div class="list_container faq-list">
+        <div class='object_list clearfix'>
+
+            <ul>
+
+                {% for faq in object_list %}
+                <div class="object_box">
+                    <li>
+                        <p class="subhead">{{ faq.question }}</p>
+                        <p c>{{ faq.answer }}</p>
+                        <a class="btn_solid_d" href="{{ faq.resource_link }}">Learn More</a>
+                    </li>
+                </div>{% endfor %}
+
+            </ul>
+        </div>
+
+    </div>
+</div>
+{% include "footer.html" %}
