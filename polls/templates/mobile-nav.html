@@ -1,7 +1,7 @@
 {% include "head.html" %}
 <div class="luxbar luxbar-static">
     <input type="checkbox" id="luxbar-checkbox" class="luxbar-checkbox">
-    <div class="luxbar-menu luxbar-menu-right luxbar-menu-dark">
+    <div class="luxbar-menu luxbar-menu-right luxbar-menu-light">
         <ul class="luxbar-navigation">
             <li class="luxbar-header">
                 <a class="luxbar-brand" href="{% url 'polls:index'%}" class='logo brand'>
@@ -10,33 +10,25 @@
                 <label class="luxbar-hamburger luxbar-hamburger-doublespin"
                         for="luxbar-checkbox"> <span></span> </label>
             </li>
-            <li class="luxbar-item active"><a href="{% url 'polls:index'%}">Home</a></li>
-            <li class="luxbar-item dropdown"><a href="{% url 'polls:products' %}">Products</a>
-                <ul>
-                    <li class="luxbar-item" ><a href="#">Case Studies</a></li>
-                    <li class="luxbar-item" ><a href="#">About Us</a></li>
-                    <li class="luxbar-item" ><a href="#">Contact US</a></li>
+            <li class="luxbar-item active"><a href="{% url 'polls:index'%}"><i class="fa fa-home fa-2" aria-hidden="true"></i>Home</a></li>
+            <li class="luxbar-item dropdown"><a href="{% url 'polls:products' %}"><i class="fa fa-caret-down" aria-hidden="true"></i>Products</a>
+                <ul class="luxbar-navigation">
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:indoor_products' %}"><i class="fa fa-building" aria-hidden="true"></i>Indoor</a></li>
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:outdoor_products' %}"><i class="fa fa-tree" aria-hidden="true"></i>Outdoor</a></li>
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:outdoor_products' %}"><i class="fa fa-car" aria-hidden="true"></i>Automotive</a></li>
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:outdoor_products' %}"><i class="fa fa-university" aria-hidden="true"></i>Institutional</a></li>
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:products' %}">All Products</a></li>
                 </ul>
             </li>
             <li class="luxbar-item dropdown"><a href="{% url 'polls:case_studies' %}">Case Studies</a>
-                <ul>
-                    <li class="luxbar-item" ><a href="#"></a></li>
-                    <li class="luxbar-item" ><a href="#">About Us</a></li>
-                    <li class="luxbar-item" ><a href="#">Contact US</a></li>
-                </ul>
             </li>
             <li class="luxbar-item dropdown"><a href="{% url 'polls:about'%}">About Us</a>
-                <ul>
-                    <li class="luxbar-item" ><a href="#"></a></li>
-                    <li class="luxbar-item" ><a href="#">About Us</a></li>
-                    <li class="luxbar-item" ><a href="#">Contact US</a></li>
-                </ul>
             </li>
             <li class="luxbar-item dropdown"><a href="{% url 'polls:contact'%}">Contact Us</a>
-                <ul>
-                    <li class="luxbar-item" ><a href="#"></a></li>
-                    <li class="luxbar-item" ><a href="#">About Us</a></li>
-                    <li class="luxbar-item" ><a href="#">Contact US</a></li>
+                <ul class="luxbar-navigation">
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:contact' %}">Find a Sales Rep</a></li>
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:estimate' %}">Free Estimate</a></li>
+                    <li class="luxbar-item luxbar-item-child" ><a href="{% url 'polls:why_amerlight' %}">Why Amerlight?</a></li>
                 </ul>
             </li>
         </ul>

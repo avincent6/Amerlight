@@ -22,8 +22,8 @@ li {
 .brand {
   display: inline-block;
   vertical-align: middle;
-  margin: 15px 15px 0 0;
-  padding: 0 0 10px;
+  margin: 0;
+  padding: 0 0 4px;
   @media (max-width: $mobile_l) {
     margin-left: 20px;
   }
@@ -183,4 +183,9 @@ li {
     }
   }
 
+}
+@media screen and (max-width:  $mobile_l) {
+  .nav-container {
+    display: none;
+  }
 }
