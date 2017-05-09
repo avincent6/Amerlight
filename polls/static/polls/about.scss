@@ -6,8 +6,11 @@
 .div-pic {
   height: 300px;
   width: auto;
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url('/static/polls/images/flag.jpg'));
-  opacity: 0.5;
+  background-image: url('/static/polls/images/flag.jpg');
+  background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url('/static/polls/images/flag.jpg'));
+  background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url('/static/polls/images/flag.jpg'));
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), url('/static/polls/images/flag.jpg'));
+  opacity: 0.7;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
