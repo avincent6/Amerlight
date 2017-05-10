@@ -12,27 +12,187 @@
 <div class="nav_wrap">
 {% include "nav.html" %}
 </div>
-<h1>hey</h1>
-<div>
-  <h2>{{ casestudie.project_name }}</h2>
-  <img class='case_image' src='{{ casestudie.image_1 }}'>
-  <div class="">
-    <p>poop</p>
-    <p>{{ casestudie.project_description }}</p>
-    <p>{{ casestudie.address }}</p>
-    <p>{{ casestudie.address_link }}</p>
-    <p>{{ casestudie.pdf_link }}</p>
-    <p>{{ casestudie.video_link }}</p>
-    <p>{{ casestudie.testimony_quote }}</p>
-    <p>{{ casestudie.image_1 }}</p>
-    <p>{{ casestudie.image_2 }}</p>
-    <p>{{ casestudie.image_3 }}</p>
-    <p>{{ casestudie.image_4 }}</p>
-    <p>{{ casestudie.image_5 }}</p>
-    <p>{{ casestudie.isIndustrial }}</p>
-    <p>{{ casestudie.isAutomotive }}</p>
-    <p>{{ casestudie.isInstitutional }}</p>
-  </div>
+<div class='p-section black'>
+    <h2>{{ casestudie.project_name }}</h2>
+    <div class='section-left'>
+        <div class='product-headline'>
+            <p class='subhead'>{{ casestudie.address }}
+                <p>
+                    <p class='head'>{{ casestudie.project_name }}</p>
+                    <p>{{ casestudie.project_description }}</p>
+                    {% ifequal casestudie.isIndustrial True %}
+                    <p class='subhead'><i class="fa fa-building" aria-hidden="true"></i>&nbsp;&nbsp;Industrial</p>
+                    {% else %} {% endifequal %} {% ifequal casestudie.isAutomotive True %}
+                    <p class='subhead'><i class="fa fa-car" aria-hidden="true"></i>&nbsp;&nbsp;Automotive</p>
+                    {% else %} {% endifequal %}
+
+        </div>
+    </div>
+    <div class="section-right pic-slider">
+        <div class="slider-for">
+            <div data-index="1">
+                <img src="{{ casestudie.image_1 }}" alt="One">
+            </div>
+            <div data-index="2">
+                <img src="{{ casestudie.image_2 }}" alt="One">
+            </div>
+            <div data-index="3">
+                <img src="{{ casestudie.image_3 }}" alt="One">
+            </div>
+            <div data-index="4">
+                <img src="{{ casestudie.image_4 }}" alt="One">
+            </div>
+            <div data-index="5">
+                <img src="{{ casestudie.image_5 }}" alt="One">
+            </div>
+        </div>
+
+        <!-- THUMBNAILS -->
+        <div class="slider-nav">
+            <div><img src="{{ casestudie.image_1 }}" slide="slide_1">
+            </div>
+            <div><img src="{{ casestudie.image_2 }}" slide="slide_2">
+            </div>
+            <div><img src="{{ casestudie.image_3 }}" slide="slide_3">
+            </div>
+            <div><img src="{{ casestudie.image_4 }}" slide="slide_4">
+            </div>
+            <div><img src="{{ casestudie.image_5 }}" slide="slide_5">
+            </div>
+        </div>
+    </div>
 </div>
+
+<div>
+    <hr>
+    <div class='p-section info-product f-title-container'>
+        <div class='float-title'>{{ casestudie.project_name }} Product Details<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+
+        <div class='section-left specs'>
+            <p class='head spec'>{{ casestudie.project_name }}</p>
+            <p class='subhead subhead-spec '>Location</p>
+            <p class='new-line'>{{ casestudie.address }}</p>
+            <p class='subhead subhead-spec'>Light Count</p>
+            <p class='new-line'>{{ casestudie.light_count }}</p>
+            <p class='subhead subhead-spec'>Annual Savings</p>
+            <p class='new-line'>${{ casestudie.annual_savings }}</p>
+            <p class='subhead subhead-spec'>Monthly Savings</p>
+            <p class='new-line'>${{ casestudie.monthly_savings }}</p>
+            <p class='subhead subhead-spec'>Payback</p>
+            <p class='new-line'>{{ casestudie.payback }} months</p>
+            <p class='new-line'>{{ casestudie.warranty }}</p>
+        </div>
+
+        <div class='section-right '>
+
+            <br>
+            <a class='btn-solid-d download' href="{{ CaseStudie.pdf_link }}" alt='download pdf'>
+                <i class="fa fa-arrow-circle-o-down" aria-hidden="true"></i>
+                <p>Download PDF</p>
+            </a>
+            <br>
+            <br>
+            <br>
+            <a class='btn-solid-d download' href="{{ CaseStudie.address_link }}" alt='location'> <i class="fa fa-map-pin" aria-hidden="true"></i>
+                <p>Project Location</p>
+            </a>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="p-section testimony yellow">
+  "quote quotequotequotequote quote quote quotequote quote quote quote quote quote quote"
+  <p>{{ casestudie.testimony_quote }}</p>
+  <p>{{ casesudie.testimony_name }}
+</div>
+
+<div>
+    <hr>
+    <div class='p-section info-product f-title-container'>
+        <div class='float-title'>More Information<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+        <div class="section-left specs min-spec spread">
+          <p>
+            {{ casestudie.project_description }}
+            {{ casestudie.project_description }}
+
+          </p>
+        </div>
+        <div class='section-right p-img'>
+            <img src="{{ casestudie.image_2 }}">
+        </div>
+    </div>
+</div>
+
+<div>
+    <hr>
+    <div class='p-section info-product f-title-container'>
+        <div class='float-title'>More Information<i class="fa fa-chevron-down" aria-hidden="true"></i></div>
+        <div class="section-left specs min-spec spread">
+          <p>
+            {{ casestudie.project_description }}
+            {{ casestudie.project_description }}
+
+          </p>
+        </div>
+        <div class='section-left specs min-spec spread'>
+            <p class='subhead subhead-spec'>Applications for {{ casestudie.project_name }}</p>
+            {% ifequal casestudie.isIndustrial True %}
+            <a class='simple-a' href="{% url 'polls:industrial_projects' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-building" aria-hidden="true"></i></p>
+                <p class='new-line'>Industrial</p>
+            </a>
+            {% else %} {% endifequal %}
+            {% ifequal casestudie.isAutomotive True %}
+            <a class='simple-a' href="{% url 'polls:automotive_projects' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-car" aria-hidden="true"></i></p>
+                <p class='new-line'>Automovite</p>
+            </a>
+            {% else %} {% endifequal %}
+            {% ifequal casestudie.isInstitutional True %}
+            <a class='simple-a' href="{% url 'polls:institutional_projects' %}">
+                <p class='subhead subhead-spec'><i class="fa fa-university" aria-hidden="true"></i></p>
+                <p class='new-line'>Institutional</p>
+            </a>
+            {% else %} {% endifequal %}
+        </div>
+        <div class='section-right p-img'>
+            <img src="{{ casestudie.image_1 }}">
+        </div>
+    </div>
+</div>
+
+<div class='p-section yellow product-nav'>
+    <a class='simple-a' href="{% url 'polls:case_detail' casestudie.slug %}">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+        <p>Back to the top</p>
+    </a>
+    <a class='simple-a' href="{% url 'polls:products' %}">
+        <p>All Products</p>
+    </a>
+    <a class='simple-a' href="{% url 'polls:case_studies' %}">
+        <p>Case Studies</p>
+    </a>
+    <a class='simple-a' href="#">
+        <i class="fa fa-photo" aria-hidden="true"></i>
+        <p>Gallery</p>
+    </a>
+
+</div>
+
+<div class='p-section product-nav'>
+    <a class='simple-a' href="{% url 'polls:index' %}">
+        <p class='head'>home</p> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+
+    </a>
+    <a class='simple-a' href="{% url 'polls:case_studies' %}">
+        <p class='head'>Case Studies</p> <i class="fa fa-chevron-right" aria-hidden="true"></i>
+    </a>
+    <a class='simple-a' href="{% url 'polls:case_detail' casestudie.slug %}">
+        <p class='head'>{{ casestudie.project_name }}</p>
+    </a>
+</div>
+
 
 {% include "footer.html" %}

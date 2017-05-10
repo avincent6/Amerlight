@@ -56,22 +56,37 @@
             border-radius: 3px 3px 0 0;
             text-align: left;
           }
-
-          img {
+          .list-pic-container {
             width: 250px;
-            height: auto;
-            float: left;
-            clear: both;
-            padding: 50px;
-            display: inline-block;
-            padding: 20px;
+            height: 334px;
+            margin: 0;
+            img {
+              margin: 0 auto;
+              width: 208px;
+              height: auto;
+              float: left;
+              clear: both;
+              display: inline-block;
+              padding: 20px;
+              @media only screen and (max-width: $tablet_s) {
+                width: 130px;
+                padding: 10px;
+              }
+              @media only screen and (max-width: $mobile_m) {
+                padding: 5px;
+                width: 90px;
+                margin-top: 15px;
+              }
+            }
             @media only screen and (max-width: $tablet_s) {
               width: 150px;
+              height: 194px;
               padding: 10px;
             }
             @media only screen and (max-width: $mobile_m) {
               padding: 5px;
               width: 100px;
+              height: 144px;
             }
           }
         }

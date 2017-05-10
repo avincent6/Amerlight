@@ -1,18 +1,18 @@
 {% include "scripts.html" %} {% include "head.html" %} {% load compress %} {% load staticfiles %} {% compress css %}
 <link rel="stylesheet" type="text/scss" href="{% static 'styles.scss' %}" />
 <link rel="stylesheet" type="text/scss" href="{% static 'contact.scss' %}" /> {% endcompress %}
+{% include "nav.html" %}
 
-<div class="nav_wrap">
-    {% include "nav.html" %}
-</div>
 <!--
 <div>
     <form role="form" action="" method="post">
         {% csrf_token %} {{ form.as_table }}
+        <input type="text" name="" value="">
         <button type="submit">Submit</button>
     </form>
-</div>
--->
+</div> -->
+
+
 <div class='contact'>
     <h2>Contact Us Today</h2>
 </div>
@@ -25,10 +25,10 @@
         <a href="tel:1-812-431-1204">
             <h4>812.431.1204</h4>
         </a>
-        <a href="https://goo.gl/maps/C6UyRozyWbR2" target='_blank'>
+        <a href="https://goo.gl/maps/pXPKoV4mybJ2" target='_blank'>
             <p>Amerlight LLC</p>
-            <p>500 N 2nd Ave</p>
-            <p>Evansville, IN 47710</p>
+            <p>2800 Lynch Road Suite B</p>
+            <p>Evansville, IN 47711</p>
             <p>United States</p>
         </a>
     </article>
@@ -42,10 +42,10 @@
         <a href="mailto:brians@amerlight.com?Subject=Amerlight%20Website" target='_blank'>
             <h4>brians@amerlight.com</h4>
         </a>
-        <a href="https://goo.gl/maps/qsyLZ8XvriQ2" target='_blank'>
+        <a href="https://goo.gl/maps/pXPKoV4mybJ2" target='_blank'>
             <p>Amerlight LLC</p>
-            <p>9200 Petersburg Road</p>
-            <p>Evansville, IN 47725</p>
+            <p>2800 Lynch Road Suite B</p>
+            <p>Evansville, IN 47711</p>
             <p>United States</p>
         </a>
     </article>
@@ -56,10 +56,9 @@
         <img src='/static/polls/images/question_icon.svg'></a>
 
     <article>
-        <h3>Freqenuently Asked Questions</h3>
+        <h3>Frequently Asked Questions</h3>
         <br>
         <a class='btn_translucent_d' href="{% url 'polls:faq' %}">See all FAQs</a>
     </article>
 </div>
-
 {% include "footer.html" %}

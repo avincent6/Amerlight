@@ -1,7 +1,9 @@
 {% include "head.html" %}
+{% include "mobile-nav.html" %}
+
 <script type="text/javascript" src='/static/polls/javascript/base.js'></script>
 <div class='nav-container'>
-    <a class="brand" href="{% url 'polls:index'%}"><img class='logo' src='/static/polls/images/logo.png' alt='amerlight_logo'></a>
+    <a class="brand" href="{% url 'polls:index'%}"><img class='logo' src='/static/polls/images/logo-black.png' alt='amerlight_logo'></a>
     <i class="fa fa-bars bars" aria-hidden="true"></i>
     <div class='nav'>
         <li class="nav-product"><a class='nav-product-a item clearfix' href="{% url 'polls:products' %}" id="item">
@@ -33,7 +35,7 @@
                 <li><a class='item clearfix' id="item" href="{% url 'polls:product_detail' each_product.slug %}">
               {% ifequal each_product.isFeatured True %}{{ each_product.product_name }}{% else %}{% endifequal %}</a></li>
 
-                {% endfor %}
+              {% endfor %}
 
             </div>
         </div>

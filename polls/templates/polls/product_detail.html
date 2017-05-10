@@ -9,7 +9,7 @@
     <h2>{{ product.product_name }}</h2>
     <div class='section-left'>
         <div class='product-headline'>
-            <p class='subhead'>LED Pole Light
+            <p class='subhead'>{{ product.product_type }}
                 <p>
                     <p class='head'>{{ product.product_name }}</p>
                     <p>{{ product.product_description }}</p>
@@ -63,9 +63,9 @@
         <div class='section-left specs'>
             <p class='head spec'>{{ product.product_name }}</p>
             <p class='subhead subhead-spec '>Wattage</p>
-            <p class='new-line'>{{ product.wattage }}</p>
+            <p class='new-line'>{{ product.wattage }} Watts</p>
             <p class='subhead subhead-spec'>Lumens</p>
-            <p class='new-line'>{{ product.lumens }}</p>
+            <p class='new-line'>{{ product.lumens }} Lumens</p>
             <p class='subhead subhead-spec'>Lumens per Watt</p>
             <p class='new-line'>{{ product.lumens_per_watt }}</p>
             <p class='subhead subhead-spec'>CCT</p>
@@ -75,7 +75,7 @@
             <p class='subhead subhead-spec'>Colors</p>
             <p class='new-line'>{{ product.colors }}</p>
             <p class='subhead subhead-spec'>Life Span</p>
-            <p class='new-line'>{{ product.life_span }}</p>
+            <p class='new-line'>{{ product.life_span }} Hours</p>
             <p class='subhead subhead-spec'>Weight</p>
             <p class='new-line'>{{ product.weight }}</p>
             <p class='subhead subhead-spec'>Warranty</p>

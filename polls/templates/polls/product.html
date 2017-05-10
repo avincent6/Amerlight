@@ -25,7 +25,10 @@
                     <li>
                         <p>{{ product.product_name }}</p>
                     </li>
-                    <img src='{{ product.image_1 }}'></a>
+                    <div class='list-pic-container'>
+                      <img src='{{ product.image_1 }}'>
+                    </div>
+                </a>  
             </div>{% endfor %}
 
         </ul>

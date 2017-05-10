@@ -149,3 +149,14 @@ todos
 - free consultation
 - all sales membersitit
 - mobile menu
+
+
+casestudie model
+• testimony_name
+• pdf_link
+• warranty
+• light_count
+• annual_savings
+• monthly_savings
+• payback (in months)
+• more_info (1000 chars)

@@ -216,10 +216,9 @@
     color: black;
 }
 
-.slider-for,
-.slider-nav {
+.slider-for, .slider-nav {
   max-width: 400px;
-  max-height: 300px;
+  max-height: 189px;
   margin: 10px;
   text-align: center;
 }
@@ -236,8 +235,9 @@
 }
 
 .slider-for div img {
-      max-width: 400px;
-      max-height: 300px;
+  max-width: 250px;
+  max-height: 250px;
+  margin: 0 auto
 }
 
 .pic-slider {
